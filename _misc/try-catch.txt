@@ -1,0 +1,20 @@
+            try
+            {
+                //run your code that might fail	
+            }
+            catch (Exception ex)
+            {
+                //error code
+                  throw new Exception ("Broken", ex);
+
+		//show my "Broken" message and log the real error
+                  MessageBox.Show(ex.Message);
+                  LogError(ex.InnerException);
+
+		//show my "Broken" message and the real error together
+                  MessageBox.Show("Process failed - " + ex.InnerException);
+            }
+            finally
+            {
+                //code will always run
+            }

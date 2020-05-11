@@ -1,0 +1,72 @@
+	DIM strPad
+	DIM strOut
+	DIM OutLen
+	
+	OutLen = 20
+	strPad = DTSSource("Size No_ Description")
+	if IsNull(strPad) then
+	     strOut = string(OutLen," ")
+	else
+	     strOut = trim(strPad) & left(string(OutLen," "),OutLen-len(trim(strPad)))
+	end if
+	DTSDestination("Size No_ Description") = strOut
+	Main = DTSTransformStat_OK
+	
+
+
+
+	DIM strPad
+	DIM strOut
+	DIM OutLen
+	
+	OutLen = 12
+	strPad = DTSSource("Gross")
+	if IsNull(strPad) then
+	     strOut = string(OutLen,"0")
+	else
+	     strOut = left( string(OutLen,"0") , OutLen-len(trim(strPad) ) ) & trim(strPad)
+	end if
+	DTSDestination("Gross") = strOut
+	Main = DTSTransformStat_OK
+
+
+
+
+
+
+
+'**********************************************************************
+'  Visual Basic Transformation Script
+'************************************************************************
+
+'  Copy each source column to the destination column
+Function Main()
+	DIM strPad
+	DIM strOut
+	DIM LeftPad
+	DIM RightPad
+	DIM LeftLen
+	DIM RightLen
+	DIM Pos
+	
+	strPad = DTSSource("Weight_100")
+
+	LeftLen = 7
+	RightLen = 4
+	Pos = InStr(strPad,".")
+	if Pos <= 0 then Pos = Len(strPad) + 1
+	
+	if IsNull(strPad) then
+	     LeftPad = string(LeftLen,"0")
+	     RightPad = string(RightLen,"0")
+	else
+	     LeftPad = left(string(LeftLen,"0"),LeftLen-len(trim(left(strPad,Pos-1)) ) ) & trim(left(strPad,Pos-1))
+                  If Pos = Len(strPad) + 1 then
+                        RightPad = string(RightLen,"0")
+                  else
+	           RightPad = trim(right(strpad,len(strPad)-Pos)) & left(string(RightLen,"0"),RightLen-len(trim(right(strpad,len(strPad)-Pos))))	     
+	     end if
+             end if
+	DTSDestination("Weight_100") = LeftPad & "." & RightPad
+	Main = DTSTransformStat_OK
+End Function	

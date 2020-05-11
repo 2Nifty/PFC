@@ -1,0 +1,224 @@
+'TNT to DEMO
+' Add spaces to the right to fill out the field
+' also removce and CRLFs found
+function PadRight(OutLen,PadChar,ToPad) 
+	if IsNull( ToPad ) then
+		PadRight = string(OutLen,PadChar) 
+	else
+		ToPad = left(trim(replace(ToPad,chr(13)," ")),OutLen)
+		PadRight = trim(ToPad) & left(string(OutLen,PadChar),OutLen-len(trim(ToPad))) 
+	end if
+End function
+
+' Write an Entry to the log file
+function LogIt(LogFile,LogText) 
+	LogFile.Write(Date)
+	LogFile.Write(" ")
+	LogFile.Write(Time)
+	LogFile.Write(" ")
+	LogFile.Writeline(LogText)
+End function
+
+' Find an empty workfiles 
+function ScanWorkFiles(rs3, cn2, array, available) 
+	ScanWorkFiles="None" 
+	available=0
+	for i = 1 to 10
+		' See if the work file is empty
+		array(i)=0
+		TableName = "WRK" & RIGHT("0" & FormatNumber( i, 0),2)
+		cmdText = "Select count(*) as HdrCount from NVOEHDR" & TableName
+		rs3.Open cmdText, cn2
+		if  int(rs3("HdrCount")) = 0 then 
+			array(i) = 1
+			available=available+1
+			if available=1 then
+				' First available work file
+				DTSGlobalVariables("WorkFileA").Value =TableName
+				ScanWorkFiles =TableName
+			end if
+		end if
+		rs3.Close
+	Next
+End function
+
+
+'=========================================================================================================================================
+'=========================================================================================================================================
+'=========================================================================================================================================
+function main()
+Dim cn
+Dim rs,rs2
+Dim cmdText
+Dim fso
+Dim a
+Dim Executor
+Dim WorkArray(12)
+Const adChar = 129
+Const adParamInput = &H0001
+Const adCmdStoredProc = &H0004
+Set cn = CreateObject("ADODB.Connection")
+Set cn2 = CreateObject("ADODB.Connection")
+Set rs = CreateObject("ADODB.Recordset")
+Set rs2 = CreateObject("ADODB.Recordset")
+Set rs3 = CreateObject("ADODB.Recordset")
+Set rs4 = CreateObject("ADODB.Recordset")
+cn2.ConnectionString = DTSGlobalVariables("ConnxConnectStr").Value
+cn2.Open
+' We are optimistic
+Main = DTSTaskExecResult_Success
+'Initialize file system object and file.
+Set fso = CreateObject("Scripting.FileSystemObject")
+'Set ADO connection properties.
+cn.Provider = "sqloledb"
+cn.ConnectionString = DTSGlobalVariables("PipeDbConnectStr").Value
+cn.CommandTimeout = 0
+cn.Open
+cn.DefaultDatabase = "ThePipeMain"
+cmdText = "SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED"
+rs.Open cmdText, cn
+cmdText = "Select count(*) as TotalLoad from ThePipeSalesHeader WHERE (ThePipeStepCtr = 100000)"
+rs.Open cmdText, cn
+TotalLoad = cint(trim(rs("TotalLoad")))
+rs.Close
+if TotalLoad>0 then
+	' We got something
+	cmdText = "Select * from ThePipeCircaSalesOrder"
+	rs.Open cmdText, cn
+	' Write out the Log file
+	FileDateStr = datepart("yyyy",now) 
+	FileDateStr = FileDateStr & left("00",2-len(datepart("m",now))) & datepart("m",now)
+	FileDateStr = FileDateStr & left("00",2-len(datepart("d",now))) & datepart("d",now)
+	'CommandFileName = "\\PFCRND1\D1LIB\ThePipe\SOLogs\SO" & FileDateStr & "Log.txt"
+	'CommandFileName = "\\Pfcsqlp\LOG\SOLogs\SO" & FileDateStr & "Log.txt"
+	CommandFileName = DTSGlobalVariables("LogPath").Value & "SO" & FileDateStr & "Log.txt"
+	Set l = fso.OpenTextFile(CommandFileName, 8, True)
+	DQ = CHR(34)
+	TAB = CHR(9)
+	' Get a work file to fill
+	EmptyWorkFiles=0
+	WorkFile = ScanWorkFiles(rs3, cn2, WorkArray, EmptyWorkFiles)
+	TotalSent = 0
+	x = LogIt( l,"Starting Pipe Transfer of " & cstr(TotalLoad) & " Sales Orders to Circa via Connx using work file " & WorkFile & ". " & cstr(EmptyWorkFiles) & " are empty.")
+	if  WorkFile <> "None" then
+		' Check the load and see if it needs to be split
+		SplitLoadRun = false
+		FilesToUse = 1
+		if TotalLoad > 15 and EmptyWorkFiles > 2 then
+			' use half of the remaining workfiles to spread the load
+			FilesToUse = int(EmptyWorkFiles/2)
+			ShippersPerWorkFile = int(TotalLoad/FilesToUse)
+			SplitLoadRun = true
+			x = LogIt( l,"Splitting run of " & cstr(TotalLoad) & " shippers across " & cstr(FilesToUse) & " workfiles. " & ShippersPerWorkFile & " per workfile")
+		end if
+		' Set up will call pipe if available
+		WillCallPipeOpen = False
+		WillCallPipeUsed = False
+		for i = 10 to 10-int((EmptyWorkFiles-FilesToUse)/2) step -1
+			if WorkArray(i)=1 and WorkFile <>  "WRK" & RIGHT("0" & FormatNumber( i, 0),2) then
+				WillCallPipeOpen = True
+				WillCallPipeNumber = i
+				exit for
+			end if
+		Next
+		' Loop through the updates
+		ShippersInWorkFile = 0
+		WorkFileInUse = 2
+		do while not rs.eof
+			if SplitLoadRun and (ShippersInWorkFile > ShippersPerWorkFile) and (WorkFileInUse <= FilesToUse) then
+				' change the workfile during a split run once the current workfile is full
+				for i = 1 to 10
+					' get the next empty workfile
+					NewName = "WRK" & RIGHT("0" & FormatNumber( i, 0),2)
+					if WorkFile = NewName then
+						'consume the current workfile from the array
+						WorkArray(i) = 0
+					end if
+					if  WorkArray(i) = 1 then 
+						' we got an empty
+						WorkFile = NewName
+					   	Select Case cstr(WorkFileInUse)
+						           Case "2"  DTSGlobalVariables("WorkFileB").Value =WorkFile
+						           Case "3"  DTSGlobalVariables("WorkFileC").Value =WorkFile
+						           Case "4"  DTSGlobalVariables("WorkFileD").Value =WorkFile
+						           Case "5"  DTSGlobalVariables("WorkFileE").Value =WorkFile
+						           Case Else DTSGlobalVariables("WorkFileA").Value =WorkFile
+						End Select
+						WorkFileInUse = WorkFileInUse + 1
+						x = LogIt( l,"Workfile changed to " & WorkFile & ".")
+						exit for
+					end if
+				Next
+				ShippersInWorkFile=0
+			end if
+			ActualWorkFile = WorkFile
+			' Send to Will Call Workfile
+			if ((trim(rs("NVH_PAY_TERMS")) = "P-WILL CAL")  or (trim(rs("NVH_SHIP_VIA"))="WILL CALL")) and WillCallPipeOpen then
+				ActualWorkFile = "WRK" & RIGHT("0" & FormatNumber( WillCallPipeNumber, 0),2) 
+				WillCallPipeUsed = True
+				DTSGlobalVariables("WorkFileWC").Value = ActualWorkFile
+			end if
+			' Add it
+			cmdText = "insert into NVOEHDR" & ActualWorkFile & " "
+			cmdText = cmdText &"( NVH_BRANCH, NVH_DOC, NVH_FLAG, NVH_CUST, NVH_ORDER_TYPE, NVH_ORDER_DATE," 
+			cmdText = cmdText &"NVH_PROMISE_DATE, NVH_SHIP_TO_NAME, NVH_SHIP_TO_ADDR1, NVH_SHIP_TO_ADDR2, NVH_SHIP_TO_ADDR3, "
+			cmdText = cmdText &"NVH_SHIP_TO_CITY, NVH_SHIP_TO_STATE, NVH_SHIP_TO_ZIP, "
+			cmdText = cmdText &"NVH_BILL_TO_NAME, NVH_BILL_TO_ADDR1, NVH_BILL_TO_ADDR2, NVH_BILL_TO_ADDR3, "
+			cmdText = cmdText &"NVH_BILL_TO_CITY, NVH_BILL_TO_STATE, NVH_BILL_TO_ZIP, NVH_SHIP_VIA, NVH_FRT_TERMS, NVH_PAY_TERMS, "
+			cmdText = cmdText &"NVH_CT_ARRAY_00001, NVH_CT_ARRAY_00002, NVH_CT_ARRAY_00003, NVH_CT_ARRAY_00004, NVH_CT_ARRAY_00005, "
+			cmdText = cmdText &"NVH_CT_ARRAY_00006, NVH_CT_ARRAY_00007, NVH_CT_ARRAY_00008, NVH_CT_ARRAY_00009, NVH_CT_ARRAY_00010, "
+			cmdText = cmdText &"NVH_CT_COUNT, NVH_CLERK, NVH_BUYER_CONTACT, NVH_PO, NVH_TOTAL_GROSS_WEIGHT, NVH_FREIGHT_VALUE, "
+			cmdText = cmdText &"NVH_MISC_VALUE, NVH_PRINTER, NVH_SLSPERSON,NVH_SBRANCH,FILLER"
+			cmdText = cmdText & " ) values ("
+			cmdText = cmdText & trim(rs("NVH_BRANCH")) & ", " 
+			cmdText = cmdText &  trim(rs("NVH_DOC")) & ", " 
+			cmdText = cmdText &  trim(rs("NVH_FLAG"))  & ", " &  trim(rs("NVH_CUST")) & ", "
+			cmdText = cmdText & trim(rs("NVH_ORDER_TYPE")) & ", " &  trim(rs("NVH_ORDER_DATE")) & ", " &  trim(rs("NVH_PROMISE_DATE"))  & ", "
+			cmdText = cmdText & DQ & trim(rs("NVH_SHIP_TO_NAME")) & DQ & ", " 
+			cmdText = cmdText & DQ &  trim(rs("NVH_SHIP_TO_ADDR1")) & DQ & ", " 
+			cmdText = cmdText & DQ &  trim(rs("NVH_SHIP_TO_ADDR2"))  & DQ & ", " 
+			cmdText = cmdText & DQ & trim(rs("NVH_SHIP_TO_ADDR3")) & DQ & ", " 
+			cmdText = cmdText & DQ &  trim(rs("NVH_SHIP_TO_CITY")) & DQ & ", '" 
+			cmdText = cmdText &  trim(rs("NVH_SHIP_TO_STATE")) & "', '" &  trim(rs("NVH_SHIP_TO_ZIP"))  & "', "
+			cmdText = cmdText & DQ & trim(rs("NVH_BILL_TO_NAME")) & DQ & ", " 
+			cmdText = cmdText & DQ &  trim(rs("NVH_BILL_TO_ADDR1")) & DQ & ", " 
+			cmdText = cmdText & DQ &  trim(rs("NVH_BILL_TO_ADDR2"))  & DQ & ", " 
+			cmdText = cmdText & DQ & trim(rs("NVH_BILL_TO_ADDR3")) & DQ & ", " 
+			cmdText = cmdText & DQ &  trim(rs("NVH_BILL_TO_CITY")) & DQ & ", '" 
+			cmdText = cmdText &  trim(rs("NVH_BILL_TO_STATE")) & "', '" &  trim(rs("NVH_BILL_TO_ZIP"))  & "', '"
+			cmdText = cmdText & trim(rs("NVH_SHIP_VIA")) & "', '" &  trim(rs("NVH_FRT_TERMS")) & "', '" &  trim(rs("NVH_PAY_TERMS"))  & "', '"
+			cmdText = cmdText & trim(rs("NVH_CT_ARRAY_00001")) & "', '" &  trim(rs("NVH_CT_ARRAY_00002")) & "', '" &  trim(rs("NVH_CT_ARRAY_00003"))  & "', '"
+			cmdText = cmdText & trim(rs("NVH_CT_ARRAY_00004")) & "', '" &  trim(rs("NVH_CT_ARRAY_00005")) & "', '" &  trim(rs("NVH_CT_ARRAY_00006"))  & "', '"
+			cmdText = cmdText & trim(rs("NVH_CT_ARRAY_00007")) & "', '" &  trim(rs("NVH_CT_ARRAY_00008")) & "', '" &  trim(rs("NVH_CT_ARRAY_00009"))  & "', '"
+			cmdText = cmdText & trim(rs("NVH_CT_ARRAY_00010")) & "', " &  trim(rs("NVH_CT_COUNT")) & ", " &  trim(rs("NVH_CLERK"))  & ", '"
+			cmdText = cmdText & trim(rs("NVH_BUYER_CONTACT")) & "', '" &  trim(rs("NVH_PO")) & "', " &  trim(rs("NVH_TOTAL_GROSS_WEIGHT"))  & ", "
+			cmdText = cmdText & trim(rs("NVH_FREIGHT_VALUE")) & ", " &  trim(rs("NVH_MISC_VALUE"))  & ", '" &  trim(rs("NVH_PRINTER"))  & "', '" 
+			cmdText = cmdText & trim(rs("NVH_SLSPERSON"))  & "', '" &  trim(rs("NVH_SBRANCH"))  & "', '" &  trim(rs("FILLER"))  & "'"
+			cmdText = cmdText & ")"
+			' Write to log
+			LogDataString = ActualWorkFile & TAB & rs("NVH_BRANCH") & TAB & trim(rs("NVH_DOC")) & TAB & rs("NVH_ORDER_DATE") & TAB  
+			LogDataString = LogDataString & rs("NVH_SHIP_TO_NAME") & TAB & rs("NVH_CUST") & TAB & rs("NVH_PRINTER") & TAB
+			LogDataString = LogDataString & rs("NVH_SLSPERSON") & TAB & rs("NvDoc") & TAB & rs("NVH_PO") & TAB & rs("NVH_SBRANCH") & TAB
+			x = LogIt( l,  LogDataString & "Inserted" )
+			'x = LogIt( l,cmdText)
+			rs3.Open cmdText, cn2
+			cmdText = "UPDATE ThePipeSalesHeader SET ThePipeStepCtr = 100001, ThePipeWorkFile = '" & ActualWorkFile & "' WHERE  ("
+			cmdText = cmdText & "[No_]  = '" & trim(rs("NvDoc")) & "')"
+			rs4.Open cmdText, cn
+			'rs3.Close
+			ShippersInWorkFile = ShippersInWorkFile + 1
+			rs.movenext
+			' x = LogIt( l,"Record done")
+		loop
+	else
+		x = LogIt( l,"All the work files are full. Run aborted.")
+		'rs3.Close
+		Main = DTSTaskExecResult_Failure
+	end if
+	' x = LogIt( l,"bye")
+	l.Close
+end if		
+end function
+
+
+	
