@@ -1,0 +1,630 @@
+/* CSS Document 
+--------------------------------------------------------------
+**************************************************************
+Project			:PFC Sales & Pricing
+Created By		:Dinesh Bharathy Arumugam
+Created Date	:28, November 2006
+**************************************************************
+Versions:
+Version	#	Modified By		Modified Date	
+--------------------------------------------------------------
+v1.0		Dinesh			28, November 2006
+--------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*/
+
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #003366;
+}
+.cnt 
+{
+	font-family: Arial;	
+	font-size: 11px;	
+	font-weight: normal;	
+	color: #000000;	
+	margin-left: 5px;
+}
+a {
+	text-decoration:none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #CC0000;
+	border: none;
+}
+/* CSS Cocument */.topBg {
+	background-image: url(../images/topBG.jpg);
+	background-repeat: repeat-x;
+	background-position: left bottom;
+	height: 58px;
+	padding-top: 2px;
+	padding-right: 2px;
+	padding-bottom: 2px;
+	padding-left: 2px;
+}
+.logoHolder {
+	height: 45px;
+	border: 1px solid #C7E3E6;
+	width: 215px;
+	background-color: #FFFFFF;
+	padding: 2px;
+}
+.tabBk {
+	background-image: url(../images/TabBg.jpg);
+	background-repeat: repeat-x;
+	background-position: left center;
+}
+.helpTopBg {
+	background-image: url(../images/helpTopBg.jpg);
+	background-repeat: repeat-x;
+	background-position: left center;
+}
+.helpBg {
+	background-image: url(../images/helpBG.jpg);
+	background-repeat: repeat-x;
+	background-position: left center;
+}
+.bodyBg 
+{
+	background-image: url(../images/bodyBg.jpg);
+	background-repeat: repeat-x;
+	background-position: left top;
+	height: 450px;
+	padding-top: 1px;
+	padding-right: 0px;
+	padding-bottom: 1px;
+	padding-left: 0px;
+}
+.Required {
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: bold;
+	color: #FF0000;
+	text-decoration: none;
+	margin-left: 1px;
+	margin-right: 1px;
+}
+.PageHolder {
+	height: 470px;
+	border: 1px solid #B7DBDF;
+	width: 100%;
+	background-color: #FFFFFF;
+	padding: 0px;
+}
+.footer {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #47989E;
+	background-color: #c6eef6;/*#C6E3E5;*/
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	border-top-color: #4AA8B3;
+	padding: 3px 3px 3px 6px;
+}
+.footer a{
+	color: #006666;
+}
+.footer a:link{
+	color: #006666;
+}
+.footer a:visited{
+	color: #006666;
+}
+.footer a:active{
+	color: #006666;
+}
+.footer a:hover{
+	color: #006666;
+}
+.BorderAll {
+	border: 1px solid #00a7c8;/* #C4E1E3;*/
+	padding-left:10px;
+	padding-top:10px;
+}
+.PageHd {
+	background-color: #c6eef6 ;/*#C4E1E3;*/
+	border: 1px ;
+	padding: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #003366;
+	height: 22px;
+}
+.PagecontrolHd {
+	background-color: #C4E1E3;
+	border:0px;
+	padding: 3px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #3A6D76;
+	height: 22px;
+}
+.PrintHd {
+	background-color:  #C4E1E3;	
+	padding: 1px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight: bold;
+	color:#3A6D76;
+	height: 25px;
+}
+.GridHd {
+	background-color: #c6eef6;/*#C4E1E3;*/
+	border: 1px solid #086f94;/*#97CACE;*/
+	padding: 3px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #003366;
+	height: 22px;
+	cursor:hand;
+	
+}
+
+
+.GridHd a:link{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color:#003366;
+	text-decoration: none;
+	
+}
+
+.GridHd a:active{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #3A6D76;
+	text-decoration: none;
+	
+}
+
+.GridHd a:visited{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #3A6D76;
+	text-decoration: none;
+
+}
+
+.GridHd a:hover{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #4AA8B3;
+	text-decoration: none;
+	cursor:hand;
+	
+}
+
+
+.WhiteBold {
+	
+	
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+
+.itemShade {
+	background-color: #EDF6F7;
+	height: 22px;	
+	
+}
+.item {
+
+	background-color: #FFFFFF;
+	height: 22px;
+	
+}
+.blackText {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	font-weight: normal;
+}
+.formCtrl {
+	background-color: #F7F7E1;
+	height: 18px;
+	width: 140px;
+	border: 1px solid #8E9283;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #333333;
+	padding: 0px 0px 0px 0px;
+}
+
+.ddlCtrl {
+	background-color: #F7F7E1;
+	border: 0px solid #8E9283;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;	
+	color: #333333;	
+	overflow:hidden;
+}
+
+.formCtrlrgtalign {
+	background-color: #F7F7E1;
+	height: 18px;
+	width: 140px;
+	border: 1px solid #8E9283;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	text-align:right;
+	color: #333333;
+	padding: 0px 0px 0px 0px;
+	cursor:text;
+}
+.FormBtn {
+	background-color: #FFFFFF;
+	background-image: url(../images/buttonBk.jpg);
+	background-repeat: repeat-x;
+	background-position: left top;
+	height: 22px;
+	padding-top: 2px;
+	padding-right: 5px;
+	padding-bottom: 2px;
+	padding-left: 5px;
+	border: 1px solid #990000;/*#58A9AF;*/
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color:#FFFFFF; /*#003333;*/
+	cursor:hand;
+}
+.MenuItemMo {
+	background-color: #FFFFFF;
+	background-image: url(../images/buttonBk.jpg);
+	background-repeat: repeat-x;
+	background-position: left top;
+	height: 22px;
+	padding-top: 2px;	
+	padding-bottom: 2px;	
+	border: 1px solid #58A9AF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #003333;
+	cursor:hand;
+}
+.Sbar {
+		/*scrollbar-face-color:#beecf4;
+	scrollbar-highlight-color:#beecf4;
+	scrollbar-3dlight-color:#e7fbff;
+	scrollbar-darkshadow-color:#bdebf5;
+	scrollbar-shadow-color:#beecf4;
+	scrollbar-arrow-color:#01686a;
+	scrollbar-track-color:#9adcea; */
+scrollbar-arrow-color: #4e658a;
+scrollbar-3dlight-color: #66E6F4;
+scrollbar-darkshadow-color: #666677;
+scrollbar-face-color: #9CEBF4;
+scrollbar-highlight-color: #e9e9e9;
+scrollbar-shadow-color: #a1b1c3;
+scrollbar-track-color: #D9F2F4;
+}
+.SmapMO {
+	background-color: #C5E8F3;
+	cursor: hand;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+.Smap {
+	cursor: hand;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+.mainmnu_lk1 { color: #333333; font-family: Arial; font-size: 8pt; border: 0px solid #FFFFFF; 
+               padding-left: 5px; padding-right: 5px; padding-top: 4px; 
+               padding-bottom: 4px; font-weight:bold }
+               
+.mainmnu_lk1 a, .mainmnu_lk1 a:link, .mainmnu_lk1 a:active, .mainmnu_lk1 a:visited, .mainmnu_lk1 a:hover 
+			{ color: #333333; font-family: Arial; font-size: 8pt; }
+
+.submnu_lk0 { border:0px solid #FFFFFF; font-family: Arial; font-size: 8pt; color: #696969; 
+               padding-left: 5px; padding-right: 5px; padding-top: 4px; 
+               padding-bottom: 4px }
+               
+               
+
+.ShowHideBarBk {
+	background-color: #E9F7FB;
+	background-image: url(../Images/SHBk.jpg);
+	background-repeat: repeat-y;
+	background-position: right top;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #000000;
+}
+.LeftPadding {
+	padding-left: 20px;
+}
+.leftMenuItemBorder {
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #F2FAFD;	
+	border-bottom-color: #2e7a90;
+	height: 23px;
+}
+.leftMenuItem 
+{
+	height: 23px;
+	/*padding-left: 20px;*/
+	text-decoration: none;	
+}
+.leftMenuItemMo1 {
+	height: 23px;
+	/*padding-left: 20px;*/
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;	
+	color: #FFFFFF;	
+	background-color: #2e6f82;
+	cursor: hand;	
+	text-decoration:none;
+}
+.leftMenuItem a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #003366;
+	text-decoration: none;
+}
+.leftMenuItem a:link {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #003366;
+	text-decoration: none;
+}
+
+.leftMenuItem a:visited {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #003366;
+	text-decoration: none;
+}
+.leftMenuItem a:active {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #003366;
+	text-decoration: none;
+}
+.leftMenuItem a:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	text-decoration: none;
+}
+.LeftBg {
+	border-right:1px solid #2e7a90;
+	background-image: url('../images/LeftBg.gif');
+	background-repeat: repeat-x;
+	background-position: left bottom;
+		height :400px;
+}
+.Left {
+	border-right:1px solid #2e7a90;
+	background-image: url('../images/LeftBg.gif');
+	background-repeat: repeat-x;
+	background-position: left bottom;
+		
+}
+.LeftBgcross {
+	border-right:1px solid #2e7a90;
+	background-color: #c6eef6 ;
+	background-repeat: repeat-x;
+	background-position: left bottom;
+		height :400px;
+}
+  .cross {
+	
+	background-color: #c6eef6 ;
+	background-repeat: repeat-x;
+	background-position: left bottom;
+		height :420px;
+}
+.leftMenuItemMo {
+	background-image: url('../images/menubgmo.jpg');
+	background-repeat: repeat-x;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #FFFFFF;
+	border-bottom-color: #2b6671;	
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #FFFFFF;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	cursor: hand;
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-right-color: #2b6671;
+	border-left-color: #2b6671;
+	height: 20px;
+	text-decoration:none;
+	
+}
+.leftMenuItemSelect {
+	background-image: url('../images/menubgmover.gif');
+	background-repeat: repeat-x;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #FFFFFF;
+	border-bottom-color: #2b6671;	
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #FFFFFF;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	cursor: hand;
+	border-right-width: 0px;
+	border-left-width: 0px;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-right-color: #2b6671;
+	border-left-color: #2b6671;
+	height: 20px;
+	text-decoration:none;
+	
+}
+.TabHead {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: red;	
+}
+.formCtrlAvail {
+	background-color: #F7F7E1;
+	height: 18px;
+	width: 140px;
+	border: 1px solid #8E9283;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #333333;
+	
+}
+.lbl_whitebox 
+	{
+		font-family:  Helvetica, Arial, sans-serif;
+		font-size: 11px;
+		color: #003366;	
+		background:#ffffff;	
+		border: 1px solid Gray;
+		font-weight:normal;
+		height: 12px;
+		padding-top: 2px;
+		padding-right: 2px;
+		padding-bottom: 3px;
+		padding-left: 2px;
+		text-align: left;
+		
+	}
+	
+	
+.bgheaderbartile 
+{
+	background-image: url(../images/bgpoptile.jpg);
+	background-repeat: repeat-x;
+	height: 27px;
+}
+
+#PageHeader {background:url(../images/headerBg.jpg) repeat-x;height:35px; }
+h1 {color:#CC0000;font-size:22px;margin:0px;padding:0px;font-weight:normal;line-height:45px;margin-left:10px;}
+h2 {color:#CC0000;font-size:18px;margin:0px;padding:0px;font-weight:normal;line-height:35px;margin-left:10px;}
+
+/* User Infor Bar Styles */
+#userInfo {position:absolute;top:0;left:0;text-align:center;width:100%;}
+#userInfo table{width:auto;text-align:center;}
+.userinfobg {background:url(../images/userinfo_bg.gif) repeat-x;padding:0px 10px;}
+.userinfobg span{padding-left:20px;color:#ffffff;}
+.userinfobg span.Date{background:url(../images/clock.gif) no-repeat 0px -2px;}
+/* User Infor Bar Styles */
+#userInfo {position:absolute;top:0;left:0;text-align:center;width:100%;}
+#userInfo table{width:auto;text-align:center;}
+.userinfobg {background:url(../images/userinfo_bg.gif) repeat-x;padding:0px 10px;}
+.userinfobgrev {background:url(../images/userinfo_bg_rev.gif) repeat-x;padding:0px 10px;}
+.userinfobg label{padding-left:20px;color:#ffffff;}
+.userinfobg label.Date{background:url(../images/clock.gif) no-repeat 0px -2px;}
+
+/* Menu classes*/
+.ShowHideBarBk {
+	background-color: #E9F7FB;
+	background-image: url(../Images/SHBk.jpg);
+	background-repeat: repeat-y;
+	background-position: right top;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #2085A2;
+}
+
+.LeftBg {
+	background-color: #A5DEEE;
+	background-image: url(../Images/LeftBg.jpg);
+	background-repeat: repeat-x;
+	background-position: left top;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #8CD5EA;
+}
+.BackGroundBar
+{
+	background-image: url(ItemBuilder/Common/Images/bar1.gif);
+	
+}
+
+.BannerText {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	font-weight:normal;
+	color: #CC0000;
+	padding-right: 20px;
+	padding-bottom: 5px;
+}
+.Banner {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	font-weight:normal;	
+	padding-right: 20px;
+	padding-bottom: 5px;
+}
+.HeaderPanels 
+    {
+        background:url(../Images/orderHeader.jpg) repeat-x #c0e8f4;
+        height:25px; 
+        border:1px solid #88D2E9;        
+    }
+.PagerBk
+{
+	background:#c0e8f4;
+    height:20px; 
+    border:1px solid #88D2E9;        
+}
+.frmBtn {cursor:pointer;background:#BF0000 url(../images/frmBut.jpg) repeat-x top left; border:1px solid #990000; color:#FFFFFF; font-weight:bold; font-size:11px;height:22px;}
+
+
+table.grid {border:1px solid #CDECF6;}
+table.grid tr.gridHeader th,table.grid tr.gridHeader td{background:#B8E3F3 url(/Common/Images/table_HdBg.jpg) repeat-x;color: #003366;font-weight:bold;}
+table.grid tr.gridHeader td{height:22px;}
+table.grid tr td,table.grid tr th{border:1px solid #CDECF6;}
+table.noBorder tr td,table.noBorder tr th{border:0px;}
+table.grid tr td {color:#333333;height:22px;padding-right: 5px;}
+.zebra td{background:#ECF9FB;padding-right: 5px;}
+
+.gridItem {	
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	padding-right:5px;
+	
+}
+
+.

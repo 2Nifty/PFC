@@ -1,0 +1,48 @@
+﻿.toUpd
+{
+	background-color: pink;
+}
+.noUpd
+{
+	background-color: white;
+}
+.noSKU
+{
+	background-color: beige;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: #7ECFE7;
+}
+.nSVC
+{
+    background-color: lightcyan;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: #7ECFE7;
+    padding-left: 2px;
+}
+.nSVCAction
+{
+    background-color: lightcyan;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: #7ECFE7;
+}
+.hasSKU
+{
+    background-color: lavenderblush;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: #7ECFE7;
+}
+.isHub
+{
+    background-color: silver;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: #7ECFE7;
+}
+.ropBox 
+{
+	text-align: right;
+}

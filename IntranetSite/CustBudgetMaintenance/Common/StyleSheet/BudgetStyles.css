@@ -1,0 +1,39 @@
+.GridHeadLine {
+	border:0px;
+	background-color: #EFF9FC;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #BCE6F2;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #003366;
+	height: 20px;
+}
+
+.GridBottomLine {
+	border:0px;	
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #BCE6F2;		
+	font-weight: bold;	
+	height: 20px;
+}
+
+.FormCtrl2 {
+	/*background-color: #f8f8f8;*/
+	border: 1px solid #cccccc;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #3A3A56;
+	width: 120px;
+	height: 15px;
+	text-align: right;
+}
+
+.GridBorderAll {
+	border:1px;		
+	border-style: solid;
+	border-color: #BCE6F2;			
+}
+

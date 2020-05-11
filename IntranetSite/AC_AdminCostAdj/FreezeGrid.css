@@ -1,0 +1,46 @@
+﻿/* Div container to wrap the datagrid */
+div#div-datagrid {
+width: 1000px;
+height: 400px;
+overflow: auto;
+}
+
+/* Locks the left column */
+td.locked, th.locked {
+
+position:relative;
+/*background-color:#efefef;*/
+border:solid 1px #efefef;
+cursor: default; 
+left: expression(document.getElementById("div-datagrid").scrollLeft-2); /*IE5+ only*/
+}	
+tr.gridHeader 
+{
+	border:solid 1px #efefef;
+}
+
+/* Locks table header */
+th {
+
+position:relative;
+cursor: default; 
+top: expression(document.getElementById("div-datagrid").scrollTop-2); /*IE5+ only*/
+z-index: 10;
+}
+td.lock
+{
+	position:relative;
+	bottom: expression(document.getElementById("div-datagrid").scrollBottom-1);
+}
+
+/* Keeps the header as the top most item. Important for top left item*/
+th.locked {z-index: 99;}
+
+/* Locks table header */
+.LocRow{
+
+position:relative;
+cursor: default; 
+bottom: expression(document.getElementById("div-datagrid").scrollBottom-2); /*IE5+ only*/
+z-index: 10;
+}

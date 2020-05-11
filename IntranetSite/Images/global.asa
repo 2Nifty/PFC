@@ -1,0 +1,25 @@
+<SCRIPT LANGUAGE='VBScript' RUNAT='Server'>
+Sub Application_OnStart
+	' Application data connections
+	Application("SqlXConnection") = "Server=PFCSQLP;Database=PFC;UID=PfcNormal;PWD=pfcnormal;" 
+	Application("SqlNVConnection") = "Server=PFCSQLP;Database=PFCLive;UID=PfcNormal;PWD=pfcnormal;" 
+	Application("SqlPFCRPTConnection") = "Server=PFCSQLT;Database=PFCReports;UID=PfcNormal;PWD=pfcnormal;"
+	'Application("SqlXConnection") = "Server=PFCRND1;Database=Asn;UID=PfcNormal;PWD=pfcnormal;" ' production
+	'Application("SqlXConnection") = "Server=PFCSQLT;Database=PFC;UID=PfcNormal;PWD=pfcnormal;" ' staging
+	'Application("SqlXConnection") = "DSN=SQLXConnection;UID=PfcNormal;PWD=pfcnormal;"
+	
+    ' Set Connection to session variables for later use
+	Set Application("XConn") = Server.CreateObject("ADODB.Connection")
+	'Response.Write "Connection Object Up<br>"
+	Application("XConn").Provider = "sqloledb"
+	Application("XConn").Open Application("SqlXConnection")
+	'
+	' Set the name of the ASN file to be created
+	Application("AsnOutPath") = "\\PFCRND\FTP\ASN.seg" ' staging
+	'Application("AsnOutPath") = "\\PfcFDB\FTP\ASN.seg" ' production
+	'Response.Write "Connection Object Up<br>"
+
+
+End Sub
+</SCRIPT>
+

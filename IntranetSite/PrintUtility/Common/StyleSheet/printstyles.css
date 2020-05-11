@@ -1,0 +1,41 @@
+﻿/* CSS Document */
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #333333;
+}
+body, td{font-weight:normal;}
+td{padding:2px;}
+
+.PageBg {
+	background-color: #F0F0F0;
+	border:1px solid #cccccc;
+}
+.TabHead {font-weight:bold;}
+.GridHead {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight:bold;
+	color: #333333;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background:#E4E4E4;	
+}
+
+table#dgReport {border:1px solid #efefef !important;}
+.GridHead td{font-weight:bold;border:1px solid #efefef !important;}
+
+.itemShade td{
+	background-color:#efefef;border:1px solid #efefef !important;
+}
+.item td{
+	background-color:#ffffff;border:1px solid #efefef !important;
+}
+.lborder{border-left:1px solid #cccccc;}
+.bborder{border-bottom:1px solid #cccccc;}
+.rborder{border-right:1px solid #cccccc;}
+

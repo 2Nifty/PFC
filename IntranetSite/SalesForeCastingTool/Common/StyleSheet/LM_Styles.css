@@ -1,0 +1,291 @@
+﻿
+/* CSS Document */
+body {
+	margin: 0px;
+}
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #003366;
+}
+a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color:#003366;
+	text-decoration: none;
+}
+.Left2pxPadd {
+
+	padding-left: 5px;
+}
+.Right2pxPadd {
+
+	padding-right: 5px;
+}
+.errTxt {color:red;}
+
+.shadeBgDown 
+{
+	background:url(../images/labels.gif) repeat-x bottom left;
+}
+.shadeBgUp 
+{
+background:url(../images/labels.gif) repeat-x top left;
+margin-top:0px; 
+border-bottom:1px solid #88D2E9;
+}
+
+/* Header Styles */
+.PageHeader
+{
+	background:url(../images/headerBg.jpg) repeat-x;
+	height:35px; 
+	vertical-align:top;
+}
+h1 
+{
+	color:#CC0000;
+	font-size:22px;
+	margin:0px;
+	padding:0px;
+	font-weight:normal;
+	line-height:45px;
+	margin-left:10px;
+}
+h2 
+{
+	color:#CC0000;
+	font-size:18px;
+	margin:0px;
+	padding:0px;
+	font-weight:normal;
+	line-height:35px;
+	margin-left:10px;
+}
+
+/* User Infor Bar Styles */
+#userInfo 
+{
+	position:absolute;
+	top:0;
+	left:0;
+	text-align:center;
+	width:100%;
+}
+#userInfo table
+{
+	width:auto;
+	text-align:center;
+}
+.userinfobg 
+{
+	background:url(../images/userinfo_bg.gif) repeat-x;
+	padding:0px 10px;
+}
+.userinfobg span
+{
+	padding-left:20px;
+	color:#ffffff;
+}
+.userinfobg span.Date
+{
+	background:url(../images/clock.gif) no-repeat 0px -2px;
+}
+/* User Infor Bar Styles */
+#userInfo 
+{
+	position:absolute;
+	top:0;
+	left:0;
+	text-align:center;
+	width:100%;
+}
+#userInfo table
+{
+	width:auto;
+	text-align:center;
+}
+.userinfobg 
+{
+	background:url(../images/userinfo_bg.gif) repeat-x;
+	padding:0px 10px;
+}
+.userinfobgrev 
+{
+	background:url(../images/userinfo_bg_rev.gif) repeat-x;
+	padding:0px 10px;
+}
+.userinfobg label
+{
+	padding-left:20px;
+	color:#ffffff;
+}
+.userinfobg label.Date
+{
+	background:url(../images/clock.gif) no-repeat 0px -2px;
+}
+
+.blueBorder 
+{
+	border:1px solid #88D2E9;
+}
+.lightBlueBg 
+{
+	background:#ECF9FB;
+	border-bottom:1px solid #88D2E9;
+	padding-right: 5px;
+}
+.Footer 
+{
+	background:#d9eff4;
+	border-top:1px solid #ACDFEA;
+	text-align:center;
+}
+.tooltipAnchor
+{
+	float:left;
+	padding:0px 10px;
+	display:block; 
+	line-height:23px;
+}
+.Tooltip
+{display:none;
+	line-height:23px;
+	background:#FFFFCC;
+	padding:0px 10px;
+	border:1px solid #FAEE9A;
+	position:absolute;
+	z-index:1;
+	top:0px;}
+
+/*New */
+.TabCntBk {
+	background-color: #FFFFFF;
+	background-image: url(../Images/TabCntBk.jpg);
+	background-position: left top;
+	padding: 5px;
+	background-repeat: repeat-x;
+}
+.BluBg {
+	background-color: #bce6f2;
+}
+.BanText
+{
+    color: #CC0000; 
+    font-size: 18px; 
+    margin: 0px; 
+    padding: 0px; 
+    font-weight: normal;
+    line-height: 35px; 
+    margin-left: 10px;
+}
+.smallBanText
+{
+    color: #CC0000; 
+    font-size: 15px; 
+    margin: 0px; 
+    padding: 0px; 
+    font-weight: bold;
+    line-height: 35px; 
+    margin-left: 10px;
+}
+.boldText
+{
+	font-weight: bold;
+}
+
+.FormCtrl {
+	/*background-color: #f8f8f8;*/
+	border: 1px solid #cccccc;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #003366;
+	width: 120px;
+	height: 15px;
+}
+
+.grayBorder 
+{
+	border:1px solid #cccccc;
+}
+
+.link
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color:#CC0000; 
+	text-decoration:underline;
+	font-weight:bold;
+}
+.grayboldText
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color:#666666; 
+	text-decoration:none;
+	font-weight:bold;
+}
+.grayText
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color:#666666; 
+	text-decoration:none;
+
+}
+.list
+{
+	line-height:23px;
+	background:#FFFFCC;
+	padding:0px 10px;
+	border:1px solid #FAEE9A;
+	position:absolute;
+	z-index:1;
+	top:0px;}
+	
+	.Sbar
+{ 
+scrollbar-face-color: #9EDEEC;
+scrollbar-shadow-color: #28AFCC;
+scrollbar-highlight-color: #ECF8FB;
+scrollbar-3dlight-color: #ffffff;
+scrollbar-darkshadow-color: #B1E7F1;
+scrollbar-track-color: #E4F7FA;
+scrollbar-arrow-color: #1D7E94;
+}
+
+table.grid {border:1px solid #CDECF6;}
+table.grid tr.gridHeader th,table.grid tr.gridHeader td{background:#B8E3F3 url(../images/table_HdBg.jpg) repeat-x;color: #003366;font-weight:bold;}
+table.grid tr.gridHeader td{height:22px;}
+table.grid tr td,table.grid tr th{border:1px solid #CDECF6;}
+table.noBorder tr td,table.noBorder tr th{border:0px;}
+table.grid tr td {color:#333333;height:22px;padding-right: 5px;}
+.zebra td{background:#ECF9FB;padding-right: 5px;}
+
+.gridItem {
+	
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	padding-right:5px;
+}
+.PageHead {
+
+	background-color: #EFF9FC;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: #BCE6F2;
+	font-size: 16px;
+	font-weight: bold;
+	color: #3A3A56;
+	height: 40px;
+}
+
+.BannerText {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	font-weight:normal;
+	color: #CC0000;
+	padding-right: 20px;
+	padding-bottom: 5px;
+}

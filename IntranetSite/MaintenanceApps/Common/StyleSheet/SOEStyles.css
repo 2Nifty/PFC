@@ -1,0 +1,416 @@
+﻿body    
+    {
+	    margin-left: 2px;
+	    margin-top: 2px;
+	    margin-right: 2px;
+	    margin-bottom: 2px;
+    }
+
+#header 
+    {
+        background:url(../images/headerBg.jpg) repeat-x;
+        height:45px; 
+    }
+
+#orderHeader 
+    {
+        background:url(../images/orderHeader.jpg) repeat-x #c0e8f4;
+        height:95px; 
+        border:1px solid #88D2E9;
+    }
+#orderHeader table
+    {
+        height:95px;
+    }
+.TabHead {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #003366;	
+}
+
+td.lightBg
+{
+	border: 1px solid #B0E0E6;
+	background: #F0FFFF;
+}
+#commandLine 
+    {
+        background:url(../images/commandlineBg.jpg) repeat-x;
+        height:153px; 
+        border:1px solid #88D2E9;
+    }
+#dataTableContainer 
+    {
+        border:1px solid #88D2E9;
+        height:300px; 
+        overflow:scroll; 
+        position:relative;
+        scrollbar-3dlight-color:white;
+        scrollbar-arrow-color:#1D7E94;
+        scrollbar-track-color:#ECF8FB;
+        scrollbar-darkshadow-color:#9EDEEC;
+        scrollbar-face-color:#9EDEEC;
+        scrollbar-highlight-color:#E4F7FA;
+        scrollbar-shadow-color:#1D7E94
+    }
+				
+#dataTableContainer table th
+    {
+        background:url(../images/table_HdBg.jpg) repeat-x;
+    }
+#dataTableContainer table td
+    {
+        height:22px;
+        color:#333333;
+    }
+#dataTableContainer table td,#dataTableContainer table th
+    {
+        border:1px solid #CDECF6;
+    }
+
+.splitBorder_l_h 
+    {
+        border-left:1px solid #A0DCEF;
+    }
+.splitBorder_r_h 
+    {
+        border-right:1px solid #EFF9FC;
+    }
+
+.splitborder_b_v 
+    {
+        border-bottom:1px solid #A0DCEF;
+    }
+.splitborder_t_v 
+    {
+        border-top:1px solid #EFF9FC;
+    }
+
+body,td,th 
+    {
+	    font-family:  Helvetica, Arial,sans-serif;
+	    font-size: 11px;
+	    color: #003366;
+    }
+a 
+	{ 
+		color:#003366;
+	}
+.errTxt 
+	{
+		color:red;
+	}
+#panelControls 
+	{
+		float:right;
+	}
+#panelControls img 
+	{
+		margin-right:4px;
+	}
+#buttonBar 
+	{
+		float:right;
+	}
+#buttonBar input
+	{
+		margin-right:4px;
+	}
+input 
+	{
+		font-size:11px;
+		color:#003366;
+	}
+.zebra td
+	{
+		background:#ECF9FB;
+	}
+
+#userInfo 
+{
+    position:absolute;
+    top:0;
+    left:0;
+    text-align:center;
+    width:100%;
+}
+#userInfo table
+    {
+        width:auto;
+        text-align:center;
+    }
+.userinfobg 
+    {
+        background:url(../images/userinfo_bg.gif) repeat-x;
+        padding:0px 10px;
+    }
+.userinfobg span
+    {
+        color:#ffffff;
+    }
+.userinfobg span.Date
+    {
+        background:url(../images/clock.gif) no-repeat 0px -2px;
+    }
+h1 
+    {
+        color:#CC0000;
+        font-size:22px;
+        margin:0px;
+        padding:0px;
+        font-weight:normal;
+    }
+    
+/* New Class added Temp */
+
+.HeaderPanels 
+    {
+        background:url(../images/orderHeader.jpg) repeat-x #c0e8f4;
+        height:95px; 
+        border:1px solid #88D2E9;        
+    }
+    
+
+.SubHeaderPanels 
+    {
+        background:url(../images/orderHeader.jpg) repeat-x #c0e8f4 top left;
+        height:70px; 
+        border:1px solid #88D2E9;        
+    }
+
+.lbl_whitebox 
+	{
+		font-family:  Helvetica, Arial, sans-serif;
+		font-size: 11px;
+		color: #003366;	
+		background:#ffffff;	
+		border: 1px solid Gray;
+		font-weight:normal;
+		height: 12px;
+		padding-top: 2px;
+		padding-right: 2px;
+		padding-bottom: 3px;
+		padding-left: 2px;
+		text-align: left;
+		
+	}
+
+.GridHead
+{
+	background:url(../images/table_HdBg.jpg) repeat-x;
+	border:1px solid #CDECF6;
+		
+}
+/* Locks table header */
+tr.GridHead th {
+top: expression(document.getElementById("div-datagrid").scrollTop-2); /*IE5+ only*/
+z-index: 10;
+}
+
+
+/* Keeps the header as the top most item. Important for top left item*/
+th.locked {z-index: 99;}
+.GridHead a
+{
+	text-decoration:none;	
+}
+
+.cnt 
+{
+	font-family: Arial;	
+	font-size: 11px;	
+	font-weight: normal;	
+	color: #000000;	
+	margin-left: 5px;
+}
+/* Menu classes*/
+.ShowHideBarBk {
+	background-color: #E9F7FB;
+	background-image: url(../Images/SHBk.jpg);
+	background-repeat: repeat-y;
+	background-position: right top;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #2085A2;
+}
+
+.LeftBg {
+	background-color: #A5DEEE;
+	background-image: url(../Images/LeftBg.jpg);
+	background-repeat: repeat-x;
+	background-position: left top;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #8CD5EA;
+}
+
+/* Styles for context menu */
+	
+.MarkItUp_ContextMenu_MenuTable {
+	border: 1 black solid ;
+	padding: 1 1 1 1 ;
+	shadow: 4 4 4 4 ;
+	z-index: 99 ;
+	
+	position: absolute;
+	 top: 0;  
+    left: 0; 
+      filter:	 progid:DXImageTransform.Microsoft.Shadow(color="#88D2E9", Direction=135, Strength=4) alpha(Opacity=100);
+    background:url(../images/orderHeader.jpg) repeat-x #c0e8f4;
+}
+
+.MarkItUp_ContextMenu_MenuItemBar {
+	border:			1px solid White;
+	width:			100% ;
+	cursor:			default  ;
+}
+
+.MarkItUp_ContextMenu_MenuItemBar_Over {
+	background:	#ECF3FF;
+	width:100%;
+	cursor:			hand;
+	font-family: Verdana;
+	font-size: smaller;
+	border-bottom: 1px solid #79ABFF;
+}
+
+.MarkItUp_ContextMenu_MenuItem {
+	font-family: Verdana;
+	font-size: 10px;
+	color:	black;
+	text-decoration: none;
+	border-bottom: 1px solid #FFFFFF;
+}
+.MarkItUp_ContextMenu_Outline {
+	border-top: 1px solid #C4DAFF;
+	border-right: 1px solid #79ABFF;
+	border-bottom: 1px solid #79ABFF;
+	border-left: 1px solid #C4DAFF;
+	}
+
+
+.bgmsgboxtile {
+	background-image: url(../Images/bgmsgboxtile.jpg);
+	background-repeat: repeat-x;
+	border: thin solid #b3e2f0;
+	background-color: #cfedf5;
+	background-position: left bottom;
+	font-family:  Helvetica,Arial, sans-serif;
+	font-size: 12px;
+	color: #003366;
+	
+}
+
+.Sbar
+{ 		
+        scrollbar-3dlight-color:white;
+        scrollbar-arrow-color:#1D7E94;
+        scrollbar-track-color:#ECF8FB;
+        scrollbar-darkshadow-color:#9EDEEC;
+        scrollbar-face-color:#9EDEEC;
+        scrollbar-highlight-color:#E4F7FA;
+        scrollbar-shadow-color:#1D7E94
+}
+
+input.txtBox {font-size:11px;color:#003366;border:1px solid #A5ACB2;}
+input.wide90px {width:90px;}
+input.wide80px {width:80px;}
+input.small50px {width:50px;}
+input.small30px {width:30px;}
+input.wide120px {width:120px;}
+input.wide70px {width:70px;}
+
+
+.splitBorder_l_h {border-left:1px solid #A0DCEF;}
+.splitBorder_r_h {border-right:1px solid #EFF9FC;}
+
+.splitborder_b_v {border-bottom:1px solid #A0DCEF;}
+.splitborder_t_v {border-top:1px solid #EFF9FC;}
+#commandLine {background:url(../images/commandlineBg.jpg) repeat-x;height:153px; border:1px solid #88D2E9;}
+    .userinfobgrev 
+{
+	background:url(../images/userinfo_bg_rev.gif) repeat-x;
+	padding:0px 10px;
+}
+.Left5pxPadd
+{
+	padding-left: 5px;
+}
+/* Added by Slater */
+.priceDarkLabel
+{
+	font-family:  Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	background-color: #E0FFFF;
+	border-right: #ccffff 1px solid;
+	border-top: #ccffff 1px solid;
+	border-left: #ccffff 1px solid;
+	border-bottom: #ccffff 1px solid;
+	height: 12px;
+	padding-top: 2px;
+	padding-right: 2px;
+	padding-bottom: 3px;
+	padding-left: 2px;
+	text-align: right;
+}
+.ws_whitebox 
+{
+	font-family:  Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	color: #003366;	
+	background:#ffffff;	
+	border: 1px solid Gray;
+	font-weight:normal;
+	height: 12px;
+	padding-top: 2px;
+	padding-right: 2px;
+	padding-bottom: 3px;
+	padding-left: 2px;
+	text-align: right;
+	
+}
+/* Added by Novantus */
+.lblBluebox {
+	background-color: #c6e9f4;
+	border: 1px solid #a6d1e2;
+	width: 240px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #003366;
+	padding: 2px;
+	height: 12px;
+	margin-left: 5px;
+}
+
+.test input
+{
+	background-color: #c6e9f4;
+	border: 1px solid #a6d1e2;
+	width: 240px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #003366;
+	padding: 2px;
+	height: 12px;
+	margin-left: 5px;
+}
+/* ItemCard */
+.list
+{
+	line-height:23px;
+	background:#FFFFCC;
+	padding:0px 10px;
+	border:1px solid #FAEE9A;
+	position:absolute;
+	z-index:1;
+	top:0px;
+}
+
+.blueBorder 
+{
+	border:1px solid #88D2E9;
+}

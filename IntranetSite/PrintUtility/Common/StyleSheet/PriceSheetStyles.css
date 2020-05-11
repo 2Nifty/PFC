@@ -1,0 +1,225 @@
+﻿.gridHid
+{
+	border-right: #9AB8C3 0px solid;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	width: 0px;
+}
+.priceDarkLabel
+{
+	font-family:  Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	background-color: #ECF9FB;
+	border-right: #9AB8C3 1px solid;
+	height: 12px;
+	padding-top: 2px;
+	padding-right: 2px;
+	padding-bottom: 3px;
+	padding-left: 2px;
+	text-align: right;
+}
+.priceLightLabel
+{
+	font-family:  Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	background-color: #FFFFFF;
+	border-right: #9AB8C3 1px solid;
+	height: 12px;
+	padding-top: 2px;
+	padding-right: 2px;
+	padding-bottom: 3px;
+	padding-left: 2px;
+	text-align: right;
+}
+.ws_data_right 
+{
+	font-family:  Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	color: #003366;	
+	background:#ECF9FB;	
+	border: 1px solid Gray;
+	height: 12px;
+	padding-top: 2px;
+	padding-right: 2px;
+	padding-bottom: 3px;
+	padding-left: 2px;
+	text-align: right;
+}
+.ws_data_left 
+{
+	font-family:  Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	color: #003366;	
+	background:#ECF9FB;	
+	border: 1px solid Gray;
+	height: 12px;
+	padding-top: 2px;
+	padding-right: 2px;
+	padding-bottom: 3px;
+	padding-left: 2px;
+	text-align: left;
+}
+.ws_data_center 
+{
+	font-family:  Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	color: #003366;	
+	background:#ECF9FB;	
+	border: 1px solid Gray;
+	height: 12px;
+	padding-top: 2px;
+	padding-right: 2px;
+	padding-bottom: 3px;
+	padding-left: 2px;
+	text-align: center;
+}
+.ws_whitebox 
+{
+	font-family:  Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	color: #003366;	
+	background:#ffffff;	
+	border: 1px solid Gray;
+	font-weight:normal;
+	height: 12px;
+	padding-top: 2px;
+	padding-right: 2px;
+	padding-bottom: 3px;
+	padding-left: 2px;
+	text-align: right;
+}
+.ws_whitebox_cntr 
+{
+	font-family:  Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	color: #003366;	
+	background:#ffffff;	
+	border: 1px solid Gray;
+	font-weight:normal;
+	height: 12px;
+	padding-top: 2px;
+	padding-right: 2px;
+	padding-bottom: 3px;
+	padding-left: 2px;
+	text-align: center;
+}
+.ws_whitebox_left 
+{
+	font-family:  Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	color: #003366;	
+	background:#ffffff;	
+	border: 1px solid Gray;
+	font-weight:normal;
+	height: 12px;
+	padding-top: 2px;
+	padding-right: 2px;
+	padding-bottom: 3px;
+	padding-left: 2px;
+	text-align: left;
+}
+.ws_greenbox
+{
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	color: #003366;
+	background: #00ff00;
+	border: 1px solid Gray;
+	font-weight: normal;
+	height: 12px;
+	padding-top: 2px;
+	padding-right: 2px;
+	padding-bottom: 3px;
+	padding-left: 2px;
+	text-align: right;
+}
+.greenbg 
+{
+	background:#00ff00;	
+}
+.yellowbg 
+{
+	background:#ffff00;	
+}
+.redbg 
+{
+	background:#ff0000;	
+}
+.invisibox
+{
+	background-color: #ECF9FB;
+	border-right: #ECF9FB 0px none;
+	border-bottom: #ECF9FB 0px none;
+	border-top: #ECF9FB 0px none;
+	border-left: #ECF9FB 0px none;
+	font-size: 6px;
+	color: #ECF9FB;
+	background: #ECF9FB;
+	height: 7px;
+	width: 7px;
+	visibility: hidden;
+}
+.quoting
+{
+	background-image: url(../Images/quoteBG.gif);
+	background-repeat: repeat;
+}
+.quoteLineDeleted
+{
+	background-color: palevioletred;
+}
+.quoteLineOrderMade
+{
+	background-color: palegreen;
+}
+#MessageLabel.success
+{
+	color: Green;
+}
+#MessageLabel.warn
+{
+	color: #FF8C00;
+}
+#MessageLabel.error
+{
+	color: Red;
+}
+ValidationError
+{
+	color: Red;
+}
+.ProfitButton
+{
+	font-family:  Helvetica, Arial, sans-serif;
+	font-size: 10px;
+	background-color: #ECF9FB;
+	border-right: #9AB8C3 1px solid;
+	border-left: #9AB8C3 1px solid;
+	border-top: #9AB8C3 1px solid;
+	border-bottom: #9AB8C3 1px solid;
+	height: 16px;
+	padding-top: 1px;
+	padding-right: 1px;
+	padding-bottom: 1px;
+	padding-left: 1px;
+	text-align: center;
+	margin-top: 2px;
+	vertical-align:middle;
+	cursor:hand;
+}
+
+.ws_ddl
+{
+	border: 1px solid Gray;
+}
+.QOHLink
+{
+	color: firebrick;
+	font-weight: bold;
+}
+.noDisplay
+{
+	display: none;
+}

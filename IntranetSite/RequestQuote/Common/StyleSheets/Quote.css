@@ -1,0 +1,84 @@
+/* CSS Document 
+--------------------------------------------------------------
+**************************************************************
+Project			:PFC Sales & Pricing
+Created By		:Dinesh Bharathy Arumugam
+Created Date	:28, November 2006
+**************************************************************
+Versions:
+Version	#	Modified By		Modified Date	
+--------------------------------------------------------------
+v1.0		Dinesh			28, November 2006
+--------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*/
+ .formCtrl {
+	background-color: #F7F7E1;
+	height: 18px;
+	width: 140px;
+	border: 1px solid #8E9283;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #333333;
+	padding: 0px 0px 0px 0px;
+}
+.frmBtn {cursor:pointer;background:#BF0000 url(../images/frmBut.jpg) repeat-x top left; border:1px solid #990000; color:#FFFFFF; font-weight:bold; font-size:11px;height:22px;}
+.PagerBk
+{
+	background:#c0e8f4;
+    height:45px; 
+    border:1px solid #88D2E9;        
+}
+ .BorderLR
+    {
+        border: 1px solid #D9F2F4;
+    }
+    .gridItem {	
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	padding-right:5px;
+	
+}
+ table.grid {border:1px solid #CDECF6;}
+table.grid tr.gridHeader th,table.grid tr.gridHeader td{background:#B8E3F3 url(Common/Images/table_HdBg.jpg) repeat-x;color: #003366;font-weight:bold;}
+table.grid tr.gridHeader td{height:22px;}
+table.grid tr td,table.grid tr th{border:1px solid #CDECF6;}
+table.noBorder tr td,table.noBorder tr th{border:0px;}
+table.grid tr td {color:#333333;height:22px;padding-right: 5px;}
+.zebra td{background:#ECF9FB;padding-right: 5px;}
+.ddlCtrl {
+	background-color: #F7F7E1;
+	border: 0px solid #8E9283;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;	
+	color: #333333;	
+	overflow:hidden;
+}
+
+.tabBk {
+	background-image: url(../images/TabBg.jpg);
+	background-repeat: repeat-x;
+	background-position: left center;
+}
+
+.helpTopBg {
+	background-image: url(../images/helpTopBg.jpg);
+	background-repeat: repeat-x;
+	background-position: left center;
+}
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+.BorderAll {
+	border: 1px solid #00a7c8;/* #C4E1E3;*/
+	padding-left:10px;
+	padding-top:10px;
+}

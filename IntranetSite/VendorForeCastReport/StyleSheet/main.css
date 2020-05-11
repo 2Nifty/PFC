@@ -1,0 +1,134 @@
+.padding {
+	padding: 0px 8px 8px;
+}
+.textheading {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #000000;
+	padding-top: 15px;
+	padding-right: 15px;
+	padding-bottom: 15px;
+	padding-left: 40px;
+}
+.paddingcontrol {
+	padding: 30px;
+}
+.tablehead {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #000000;
+	background-color: #b6d2ae;
+	padding: 5px;
+}
+.BlackBorderAll {
+	border: 1px solid #000000;
+}
+.tableSubhead {
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #000000;
+	background-color: #CCFFCC;
+	padding: 5px;
+}
+.tableCnt {
+
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #000000;
+	background-color: #FFFFFF;
+	padding: 5px;
+}
+.TablePadding {
+
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #000000;
+	padding: 5px;
+}
+.BlackBorder3 {
+	border-right: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+	border-left: 1px solid #000000;
+}
+.FormCtrl {
+	background-color: #ffffee;
+	width: 150px;
+}
+.FormTextArea {
+
+	background-color: #ffffee;
+}
+.FormListBox {
+	width: 250px;
+}
+.mainmenu {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #000000;
+	padding: 2px;
+	text-align: center;
+	}
+.mainmenumo {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	cursor: hand;
+	padding: 2px;
+	text-align: center;
+	color: #CCFFCC;
+}
+.FormButton {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #003300;
+	background-color: #769e6a;
+	border: 1px solid #CCE6CD;
+	width: 65px;
+	background-image: url(images/btnmain.jpg);
+	background-repeat: repeat-x;
+}
+.MainButton {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #003300;
+	background-color: #b6d2ae;
+	border: 1px solid #659A56;
+	width: 100px;
+	background-image: url(images/btnmain.jpg);
+	background-repeat: repeat-x;
+	height: 25px;
+}
+.FormButtonlong {
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #003300;
+	background-color: #769e6a;
+	border: 1px solid #CCE6CD;
+	width: 90px;
+	background-image: url(images/btnmain.jpg);
+	background-repeat: repeat-x;
+}
+.TableYellow {
+	background-color: #ffff99;
+}
+.YellowButton {
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #003300;
+	background-color: #769e6a;
+	border: 1px solid #CCE6CD;
+	width: 65px;
+	background-image: url(images/btnmain.jpg);
+	background-repeat: repeat-x;
+}

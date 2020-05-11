@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>PO Aging Trend Report Help</title>
+<link href="../Common/StyleSheet/Styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table cellspacing="0" width="100%" cellpadding="2">
+	<tr>
+		<td valign="top" colspan="2"><img src="../Common/images/FinalBanner.jpg"/></td>
+	</tr>
+	<tr>
+		<td class="PageHead" style="height: 40px" width="75%">
+			<div class="LeftPadding"><div align="left" class="BannerText">PO Aging Trend Report Help</div></div>
+		</td>
+		<td class="PageHead"  style="height: 40px" >
+			<div class="LeftPadding"><div align="right" class="BannerText" >
+			<img src="../Common/images/close.gif" onclick="javascript:window.close();" style="cursor:hand"/></div></div>
+		</td>
+	</tr>
+	<tr>
+		<td valign="top" class="LeftPadding">
+            <br />
+            <p><strong>Qualifying PO Lines must meet the following criteria:</strong><br />
+            &nbsp;-&nbsp;Not Deleted&nbsp;&nbsp;&nbsp;&nbsp;(DeleteDt is not set)<br />
+            &nbsp;-&nbsp;Not Complete&nbsp;(CompleteDt is not set)<br />
+            &nbsp;-&nbsp;Positive outstanding quantity (QtyOrdered - QtyReceived)<br />
+            &nbsp;-&nbsp;ScheduledReceiptDt must be greater than Jan 1, 2010 (to ignore old POs)<br />
+            &nbsp;-&nbsp;ReceivingLocation must fall between '00' and '88' (inclusive)<br />
+            &nbsp;-&nbsp;POStatusCd must equal 'B' (RTS-B status only)<br />
+            &nbsp;-&nbsp;POOrderNo must begin with 0, 1 or 2 only</p>
+            <br />
+		</td>
+	</tr>
+</table>
+</body>
+</html>
+

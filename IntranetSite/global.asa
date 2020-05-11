@@ -1,0 +1,19 @@
+<SCRIPT LANGUAGE='VBScript' RUNAT='Server'>
+Sub Application_OnStart
+	'-- Project Data Environment
+		'Set DE = Server.CreateObject("DERuntime.DERuntime")
+		'Application("DE") = DE.Load(Server.MapPath("Global.ASA"), "_private/DataEnvironment/DataEnvironment.asa")
+	' This is a popular connection used when you want access to the legacy data.
+	' Connx is ODBC middleware giving us access to the RMS data.
+	Application("ConnxDsn") = "DSN=CONNX"
+	Application("LegacyDsn") = "DSN=LEGACY"
+	Application("ConnxUser") = "CONNX"
+	Application("ConnxPass") = "CONNX"
+	'
+	Application("SqlNVConnection") = "Server=EnterpriseSQL;Database=PFCLive;UID=PfcNormal;PWD=pfcnormal;"	'Production NV3.7
+    	Application("SqlNV5Connection") = "Server=pfcdb02;Database=PFCFINANCE;UID=PfcNormal;PWD=pfcnormal;"	'Production NV5
+	Application("SqlPFCRPTConnection") = "Server=PFCSQLP;Database=PFCReports;UID=PfcNormal;PWD=pfcnormal;"
+	Application("PFCERPConnectionString") = "Server=PFCERPDB;Database=PERP;UID=PfcNormal;PWD=pfcnormal;"
+End Sub
+</SCRIPT>
+
