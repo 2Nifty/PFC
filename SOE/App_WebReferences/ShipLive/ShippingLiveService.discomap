@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://pfcship.pfca.com/ShippingLiveWebService/ShippingLiveService.svc?xsd=xsd2" filename="ShippingLiveService.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://pfcship.pfca.com/ShippingLiveWebService/ShippingLiveService.svc?disco" filename="ShippingLiveService.disco" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://pfcship.pfca.com/ShippingLiveWebService/ShippingLiveService.svc?xsd=xsd3" filename="ShippingLiveService0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://pfcship.pfca.com/ShippingLiveWebService/ShippingLiveService.svc?xsd=xsd0" filename="ShippingLiveService1.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://pfcship.pfca.com/ShippingLiveWebService/ShippingLiveService.svc?xsd=xsd5" filename="ShippingLiveService2.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://pfcship.pfca.com/ShippingLiveWebService/ShippingLiveService.svc?wsdl=wsdl0" filename="ShippingLiveService.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://pfcship.pfca.com/ShippingLiveWebService/ShippingLiveService.svc?xsd=xsd1" filename="ShippingLiveService3.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://pfcship.pfca.com/ShippingLiveWebService/ShippingLiveService.svc?xsd=xsd4" filename="ShippingLiveService4.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://pfcship.pfca.com/ShippingLiveWebService/ShippingLiveService.svc?wsdl" filename="ShippingLiveService0.wsdl" />
+  </Results>
+</DiscoveryClientResultsFile>
