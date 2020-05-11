@@ -1,0 +1,7 @@
+Step01 - CREATE tWO2469_HTI_Items
+Step02 - Load tWO2469_HTI_Items
+Step03 - CREATE tWO2469_Old_HTI_Items
+Step04 - DELETE existing OldItem transactions that were saved
+Step05 - UPDATE existing NewItem transactions
+Step06 - INSERT NewItem transactions saved items that did not have old usage
+Step07 - DROP temp tables

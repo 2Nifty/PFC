@@ -1,0 +1,175 @@
+
+	-----------------
+	-- Work Tables --
+	-----------------
+	--#tCatList: Load Categories
+	SELECT	tCatList.CatNo,
+			tCatList.CatDesc,
+			BuyGrp.GroupNo as BuyGroupNo,
+			BuyGrp.Description as BuyGroupDesc
+	INTO	#tCatList
+	FROM	(SELECT	LD.ListValue as CatNo,
+					LD.ListDtlDesc as CatDesc
+			 FROM	OpenDataSource('SQLOLEDB','Data Source=PFCERPDB;User ID=pfcnormal;Password=pfcnormal').PERP.dbo.[ListMaster] LM INNER JOIN
+					OpenDataSource('SQLOLEDB','Data Source=PFCERPDB;User ID=pfcnormal;Password=pfcnormal').PERP.dbo.[ListDetail] LD
+			 ON		LM.pListMasterID = LD.fListMasterID
+			 WHERE	LM.ListName = 'CategoryDesc') tCatList LEFT OUTER JOIN
+			CAS_CatGrpDesc BuyGrp (NoLock)
+	ON		tCatList.CatNo = BuyGrp.Category
+
+	--#tChainList: Load Chains
+	SELECT	LD.ListValue as ChainCd,
+			LD.ListDtlDesc as ChainName
+	INTO	#tChainList
+	FROM	OpenDataSource('SQLOLEDB','Data Source=PFCERPDB;User ID=pfcnormal;Password=pfcnormal').PERP.dbo.[ListMaster] LM INNER JOIN
+			OpenDataSource('SQLOLEDB','Data Source=PFCERPDB;User ID=pfcnormal;Password=pfcnormal').PERP.dbo.[ListDetail] LD
+	ON		LM.pListMasterID = LD.fListMasterID
+	WHERE	LM.ListName = 'CustChainName'
+	ORDER BY LD.ListValue
+
+	--#tCurYTD: Current Year To Date Sales
+	SELECT	CCSS.Category as CatNo,
+			SUM(isnull(CCSS.SalesDollars,0)) as SalesCurYTD,
+			SUM(isnull(CCSS.SalesCost,0)) as CostCurYTD,
+			SUM(isnull(CCSS.AvgCostDollars,0)) as AvgCostCurYTD,
+			SUM(isnull(CCSS.PriceCostDollars,0)) as PriceCostCurYTD,
+			SUM(isnull(CCSS.TotalWeight,0)) as WghtCurYTD,
+			SUM((isnull(CCSS.SalesDollars,0)) - (isnull(CCSS.SalesCost,0))) as GMDlrCurYTD,
+			CASE SUM(isnull(CCSS.SalesDollars,0))
+					WHEN 0 THEN 0
+					ELSE (SUM(isnull(CCSS.SalesDollars,0)) - SUM(isnull(CCSS.AvgCostDollars,0))) / SUM(isnull(CCSS.SalesDollars,0))
+			END as AvgGMPctYTD,
+			CASE SUM(isnull(CCSS.SalesDollars,0))
+					WHEN 0 THEN 0
+					ELSE (SUM(isnull(CCSS.SalesDollars,0)) - SUM(isnull(CCSS.PriceCostDollars,0))) / SUM(isnull(CCSS.SalesDollars,0))
+			END as PriceGMPctYTD,
+			CASE SUM(isnull(CCSS.TotalWeight,0))
+					WHEN 0 THEN 0
+					ELSE SUM(isnull(CCSS.SalesDollars,0)) / SUM(isnull(CCSS.TotalWeight,0))
+			END as DlrPerLbCurYTD,
+			CASE SUM(isnull(CCSS.TotalWeight,0))
+					WHEN 0 THEN 0
+					ELSE (SUM(isnull(CCSS.SalesDollars,0)) - SUM(isnull(CCSS.SalesCost,0))) / SUM(isnull(CCSS.TotalWeight,0))
+			END as GMPerLbCurYTD
+	INTO	#tCurYTD
+	FROM	CustCatSalesSummary CCSS (NoLock) LEFT OUTER JOIN
+			CustomerMaster Cust (NoLock)
+	ON		CCSS.CustomerNo = Cust.CustNo
+	WHERE	ChainCd = @ChainCd AND
+			FiscalPeriodNo BETWEEN @YTDPer and @Period
+	GROUP BY CCSS.Category
+
+	--#tCurMTD: Current Month To Date Sales
+	SELECT	CCSS.Category as CatNo,
+			SUM(isnull(CCSS.SalesDollars,0)) as SalesCurMTD,
+			SUM(isnull(CCSS.SalesCost,0)) as CostCurMTD,
+			SUM(isnull(CCSS.AvgCostDollars,0)) as AvgCostCurMTD,
+			SUM(isnull(CCSS.PriceCostDollars,0)) as PriceCostCurMTD,
+			SUM(isnull(CCSS.TotalWeight,0)) as WghtCurMTD,
+			SUM((isnull(CCSS.SalesDollars,0)) - (isnull(CCSS.SalesCost,0))) as GMDlrCurMTD,
+			CASE SUM(isnull(CCSS.SalesDollars,0))
+					WHEN 0 THEN 0
+					ELSE (SUM(isnull(CCSS.SalesDollars,0)) - SUM(isnull(CCSS.AvgCostDollars,0))) / SUM(isnull(CCSS.SalesDollars,0))
+			END as AvgGMPctMTD,
+			CASE SUM(isnull(CCSS.SalesDollars,0))
+					WHEN 0 THEN 0
+					ELSE (SUM(isnull(CCSS.SalesDollars,0)) - SUM(isnull(CCSS.PriceCostDollars,0))) / SUM(isnull(CCSS.SalesDollars,0))
+			END as PriceGMPctMTD,
+			CASE SUM(isnull(CCSS.TotalWeight,0))
+					WHEN 0 THEN 0
+					ELSE SUM(isnull(CCSS.SalesDollars,0)) / SUM(isnull(CCSS.TotalWeight,0))
+			END as DlrPerLbCurMTD,
+			CASE SUM(isnull(CCSS.TotalWeight,0))
+					WHEN 0 THEN 0
+					ELSE (SUM(isnull(CCSS.SalesDollars,0)) - SUM(isnull(CCSS.SalesCost,0))) / SUM(isnull(CCSS.TotalWeight,0))
+			END as GMPerLbCurMTD
+	INTO	#tCurMTD
+	FROM	CustCatSalesSummary CCSS (NoLock) LEFT OUTER JOIN
+			CustomerMaster Cust (NoLock)
+	ON		CCSS.CustomerNo = Cust.CustNo
+	WHERE	ChainCd = @ChainCd AND
+			FiscalPeriodNo = @Period
+	GROUP BY CCSS.Category
+
+	--#tLastYTD: Last Year To Date Sales
+	SELECT	CCSS.Category as CatNo,
+			SUM(isnull(CCSS.SalesDollars,0)) as SalesLastYTD
+	INTO	#tLastYTD
+	FROM	CustCatSalesSummary CCSS (NoLock) LEFT OUTER JOIN
+			CustomerMaster Cust (NoLock)
+	ON		CCSS.CustomerNo = Cust.CustNo
+	WHERE	ChainCd = @ChainCd AND
+			FiscalPeriodNo BETWEEN @BegLastYTDPer and @EndLastYTDPer
+	GROUP BY CCSS.Category
+
+	--#tPrevYTD: 2 Years Previous YTD Sales
+	SELECT	CCSS.Category as CatNo,
+			SUM(isnull(CCSS.SalesDollars,0)) as SalesPrevYTD
+	INTO	#tPrevYTD
+	FROM	CustCatSalesSummary CCSS (NoLock) LEFT OUTER JOIN
+			CustomerMaster Cust (NoLock)
+	ON		CCSS.CustomerNo = Cust.CustNo
+	WHERE	ChainCd = @ChainCd AND
+			FiscalPeriodNo BETWEEN @BegPrevYTDPer and @EndPrevYTDPer
+	GROUP BY CCSS.Category
+
+	--#tSOHist: Sales History
+	SELECT	isnull(Cat.CatNo,'') as CatNo,
+			isnull(Cat.CatDesc,'') as CatDesc,
+			isnull(Cat.BuyGroupNo,'') as BuyGroupNo,
+			isnull(Cat.BuyGroupDesc,'') as BuyGroupDesc,
+			isnull(tSOHist.SalesCurYTD,0) as SalesCurYTD,
+			isnull(tSOHist.CostCurYTD,0) as CostCurYTD,
+			isnull(tSOHist.AvgCostCurYTD,0) as AvgCostCurYTD,
+			isnull(tSOHist.PriceCostCurYTD,0) as PriceCostCurYTD,
+			isnull(tSOHist.WghtCurYTD,0) as WghtCurYTD,
+			isnull(tSOHist.GMDlrCurYTD,0) as GMDlrCurYTD,
+			isnull(tSOHist.AvgGMPctYTD,0) as AvgGMPctYTD,
+			isnull(tSOHist.PriceGMPctYTD,0) as PriceGMPctYTD,
+			isnull(tSOHist.DlrPerLbCurYTD,0) as DlrPerLbCurYTD,
+			isnull(tSOHist.GMPerLbCurYTD,0) as GMPerLbCurYTD,
+			isnull(tSOHist.SalesCurMTD,0) as SalesCurMTD,
+			isnull(tSOHist.CostCurMTD,0) as CostCurMTD,
+			isnull(tSOHist.AvgCostCurMTD,0) as AvgCostCurMTD,
+			isnull(tSOHist.PriceCostCurMTD,0) as PriceCostCurMTD,
+			isnull(tSOHist.WghtCurMTD,0) as WghtCurMTD,
+			isnull(tSOHist.GMDlrCurMTD,0) as GMDlrCurMTD,
+			isnull(tSOHist.AvgGMPctMTD,0) as AvgGMPctMTD,
+			isnull(tSOHist.PriceGMPctMTD,0) as PriceGMPctMTD,
+			isnull(tSOHist.DlrPerLbCurMTD,0) as DlrPerLbCurMTD,
+			isnull(tSOHist.GMPerLbCurMTD,0) as GMPerLbCurMTD,
+			isnull(tSOHist.SalesLastYTD,0) as SalesLastYTD,
+			isnull(tSOHist.SalesPrevYTD,0) as SalesPrevYTD
+	INTO	#tSOHist
+	FROM	#tCatList Cat (NoLock) INNER JOIN
+			(SELECT	isnull(tCurYTD.CatNo, isnull(tCurMTD.CatNo, isnull(tLastYTD.CatNo, isnull(tPrevYTD.CatNo,'NoCat')))) as CatNo,
+					tCurYTD.SalesCurYTD,
+					tCurYTD.CostCurYTD,
+					tCurYTD.AvgCostCurYTD,
+					tCurYTD.PriceCostCurYTD,
+					tCurYTD.WghtCurYTD,
+					tCurYTD.GMDlrCurYTD,
+					tCurYTD.AvgGMPctYTD,
+					tCurYTD.PriceGMPctYTD,
+					tCurYTD.DlrPerLbCurYTD,
+					tCurYTD.GMPerLbCurYTD,
+					tCurMTD.SalesCurMTD,
+					tCurMTD.CostCurMTD,
+					tCurMTD.AvgCostCurMTD,
+					tCurMTD.PriceCostCurMTD,
+					tCurMTD.WghtCurMTD,
+					tCurMTD.GMDlrCurMTD,
+					tCurMTD.AvgGMPctMTD,
+					tCurMTD.PriceGMPctMTD,
+					tCurMTD.DlrPerLbCurMTD,
+					tCurMTD.GMPerLbCurMTD,
+					tLastYTD.SalesLastYTD,
+					tPrevYTD.SalesPrevYTD
+			 FROM	#tCurYTD tCurYTD (NoLock) FULL OUTER JOIN
+					#tCurMTD tCurMTD (NoLock)
+			 ON		tCurYTD.CatNo = tCurMTD.CatNo FULL OUTER JOIN
+					#tLastYTD tLastYTD (NoLock)
+			 ON		tCurYTD.CatNo = tLastYTD.CatNo FULL OUTER JOIN
+					#tPrevYTD tPrevYTD (NoLock)
+			 ON		tCurYTD.CatNo = tPrevYTD.CatNo) tSOHist
+			ON		tSOHist.CatNo = Cat.CatNo

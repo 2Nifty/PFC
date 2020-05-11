@@ -1,0 +1,12 @@
+            <p><strong>Report filters can be selected for : Location, Bulk/Pkg, Category, Size, Variance and Minimum Excess Qty.<br />
+                       Select/enter any desired filters and click 'Submit' to display the report.  The Min Excess filter will currently default to a value of 4.9.</strong></p>
+
+            <p><strong>Click 'Cancel' to clear the current report and reset all filters.<br />
+                       Click 'Close' to close the report page completely.<br />
+                       Excel export and print icons are located on the bottom right.</strong></p>
+
+            <p><strong>Excess quantity for Bulk items is designated as any available quantity that exceeds twice the ROP.<br />
+                       Excess quantity for Pkg items is designated as any available quantity minus twice the ROP that exceeds twice the Super Equivalent.</strong></p>
+
+            <p><strong>Only records with an excess quantity greater than or equal to the Minimum Excess Qty filter will be displayed.</strong></p>
+            

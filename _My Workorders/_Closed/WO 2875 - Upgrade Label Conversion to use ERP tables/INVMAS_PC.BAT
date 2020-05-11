@@ -1,0 +1,1 @@
+bcp "exec [pIMLabelCNV]" queryout "\\Pfcsqlp\PWWCNV\Inventor\INVMAS.PC_NEW" -U pfcnormal -P pfcnormal -c

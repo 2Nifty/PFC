@@ -1,0 +1,313 @@
+-----------------------
+-- Build #tPrimeVend --
+-----------------------
+--Less than 10 seconds in PFCDEVDB.PERP
+	SELECT	DISTINCT
+			ItemNo, VendorNo, VendorName
+	INTO	#tPrimeVend
+	FROM	OpenDataSource('SQLOLEDB','Data Source=PFCSQLP;User ID=pfcnormal;Password=pfcnormal').PFCReports.dbo.CPR_VendorDetail
+	WHERE	VendorRank = 1 AND
+			--Category
+			((isnull(LEFT(ItemNo,5),'') BETWEEN @StrCat AND @EndCat) or
+			  CHARINDEX(isnull(LEFT(ItemNo,5),''), @CatList) > 0) and
+			--Size
+			((isnull(substring(ItemNo,7,4),'') BETWEEN @StrSize AND @EndSize) or
+			  CHARINDEX(isnull(substring(ItemNo,7,4),''), @SizeList) > 0) and
+			--Variance
+			((isnull(substring(ItemNo,12,3),'') BETWEEN @StrVar AND @EndVar) or
+			 (isnull(substring(ItemNo,12,1),'') =	CASE isnull(substring(@StrVar,1,1),'')
+															WHEN '?' THEN isnull(substring(ItemNo,12,1),'')
+																	 ELSE isnull(substring(@StrVar,1,1),'')
+													END and
+			  isnull(substring(ItemNo,13,1),'') =	CASE isnull(substring(@StrVar,2,1),'')
+															WHEN '?' THEN isnull(substring(ItemNo,13,1),'')
+																	 ELSE isnull(substring(@StrVar,2,1),'')
+													END and
+			  isnull(substring(ItemNo,14,1),'') =	CASE isnull(substring(@StrVar,3,1),'')
+															WHEN '?' THEN isnull(substring(ItemNo,14,1),'')
+																	 ELSE isnull(substring(@StrVar,3,1),'')
+													END) or
+			  CHARINDEX(isnull(substring(ItemNo,12,3),''), @VarList) > 0)
+
+--select * from #tPrimeVend
+
+
+--------------------
+-- Build #tItemUM --
+--------------------
+--Less than 10 seconds in PFCDEVDB.PERP
+	SELECT	DISTINCT
+			--Base
+			Base.ItemNo,
+--			isnull(Base.BaseStkUM,'') as BaseStkUM,
+			isnull(Base.BaseStkQty,0) as BaseStkQty,
+--			isnull(Base.AltUM,'') as AltUM,
+			--AltPurch
+--			isnull(AltPurch.AltPurchUM,'') as AltPurchUM,
+--			isnull(AltPurch.AltPurchQty,0) as AltPurchQty,
+			--AltSell
+			isnull(AltSell.AltSellUM,'') as AltSellUM,
+			isnull(AltSell.AltSellQty,0) as AltSellQty,
+			--SuperUM
+			isnull(SuperEqv.SuperUM,'') as SuperUM,
+			isnull(SuperEqv.SuperQty,0) as SuperQty
+	INTO	#tItemUM
+	FROM	(--Base
+			 SELECT	IM.ItemNo,
+					IM.SellStkUM as BaseStkUM,
+					IM.SellStkUMQty as BaseStkQty,
+					IM.PriceUM as AltUM
+			 FROM	ItemMaster IM inner join
+					ItemUM IUM
+			 ON		pItemMasterID = fItemMasterID
+			 WHERE	IM.PriceUM = IUM.UM AND
+					--Category
+					((isnull(LEFT(IM.ItemNo,5),'') BETWEEN @StrCat AND @EndCat) or
+					  CHARINDEX(isnull(LEFT(IM.ItemNo,5),''), @CatList) > 0) and
+					--Size
+					((isnull(substring(IM.ItemNo,7,4),'') BETWEEN @StrSize AND @EndSize) or
+					  CHARINDEX(isnull(substring(IM.ItemNo,7,4),''), @SizeList) > 0) and
+					--Variance
+					((isnull(substring(ItemNo,12,3),'') BETWEEN @StrVar AND @EndVar) or
+					 (isnull(substring(ItemNo,12,1),'') =	CASE isnull(substring(@StrVar,1,1),'')
+																	WHEN '?' THEN isnull(substring(ItemNo,12,1),'')
+																			 ELSE isnull(substring(@StrVar,1,1),'')
+															END and
+					  isnull(substring(ItemNo,13,1),'') =	CASE isnull(substring(@StrVar,2,1),'')
+																	WHEN '?' THEN isnull(substring(ItemNo,13,1),'')
+																			 ELSE isnull(substring(@StrVar,2,1),'')
+															END and
+					  isnull(substring(ItemNo,14,1),'') =	CASE isnull(substring(@StrVar,3,1),'')
+																	WHEN '?' THEN isnull(substring(ItemNo,14,1),'')
+																			 ELSE isnull(substring(@StrVar,3,1),'')
+															END) or
+					  CHARINDEX(isnull(substring(IM.ItemNo,12,3),''), @VarList) > 0) and
+					--Web Enabled
+					(isnull(WebEnabledInd,'0') >= @StrWeb AND isnull(WebEnabledInd,'0') <= @EndWeb)) Base LEFT OUTER JOIN
+			(--AltPurch
+			 SELECT	IM.ItemNo,
+					IM.CostPurUM as AltPurchUM,
+					IUM.AltSellStkUMQty as AltPurchQty
+			 FROM	ItemMaster IM inner join
+					ItemUM IUM
+			 ON		pItemMasterID = fItemMasterID
+			 WHERE	IM.CostPurUM = IUM.UM AND
+					--Category
+					((isnull(LEFT(IM.ItemNo,5),'') BETWEEN @StrCat AND @EndCat) or
+					  CHARINDEX(isnull(LEFT(IM.ItemNo,5),''), @CatList) > 0) and
+					--Size
+					((isnull(substring(IM.ItemNo,7,4),'') BETWEEN @StrSize AND @EndSize) or
+					  CHARINDEX(isnull(substring(IM.ItemNo,7,4),''), @SizeList) > 0) and
+					--Variance
+					((isnull(substring(ItemNo,12,3),'') BETWEEN @StrVar AND @EndVar) or
+					 (isnull(substring(ItemNo,12,1),'') =	CASE isnull(substring(@StrVar,1,1),'')
+																	WHEN '?' THEN isnull(substring(ItemNo,12,1),'')
+																			 ELSE isnull(substring(@StrVar,1,1),'')
+															END and
+					  isnull(substring(ItemNo,13,1),'') =	CASE isnull(substring(@StrVar,2,1),'')
+																	WHEN '?' THEN isnull(substring(ItemNo,13,1),'')
+																			 ELSE isnull(substring(@StrVar,2,1),'')
+															END and
+					  isnull(substring(ItemNo,14,1),'') =	CASE isnull(substring(@StrVar,3,1),'')
+																	WHEN '?' THEN isnull(substring(ItemNo,14,1),'')
+																			 ELSE isnull(substring(@StrVar,3,1),'')
+															END) or
+					  CHARINDEX(isnull(substring(IM.ItemNo,12,3),''), @VarList) > 0) and
+					--Web Enabled
+					(isnull(WebEnabledInd,'0') >= @StrWeb AND isnull(WebEnabledInd,'0') <= @EndWeb)) AltPurch
+			ON		Base.ItemNo = AltPurch.ItemNo LEFT OUTER JOIN
+			(--AltSell
+			 SELECT	IM.ItemNo,
+					IM.SellUM as AltSellUM,
+					IUM.AltSellStkUMQty as AltSellQty
+			 FROM	ItemMaster IM inner join
+					ItemUM IUM
+			 ON		pItemMasterID = fItemMasterID
+			 WHERE	IM.SellUM = IUM.UM AND
+					--Category
+					((isnull(LEFT(IM.ItemNo,5),'') BETWEEN @StrCat AND @EndCat) or
+					  CHARINDEX(isnull(LEFT(IM.ItemNo,5),''), @CatList) > 0) and
+					--Size
+					((isnull(substring(IM.ItemNo,7,4),'') BETWEEN @StrSize AND @EndSize) or
+					  CHARINDEX(isnull(substring(IM.ItemNo,7,4),''), @SizeList) > 0) and
+					--Variance
+					((isnull(substring(ItemNo,12,3),'') BETWEEN @StrVar AND @EndVar) or
+					 (isnull(substring(ItemNo,12,1),'') =	CASE isnull(substring(@StrVar,1,1),'')
+																	WHEN '?' THEN isnull(substring(ItemNo,12,1),'')
+																			 ELSE isnull(substring(@StrVar,1,1),'')
+															END and
+					  isnull(substring(ItemNo,13,1),'') =	CASE isnull(substring(@StrVar,2,1),'')
+																	WHEN '?' THEN isnull(substring(ItemNo,13,1),'')
+																			 ELSE isnull(substring(@StrVar,2,1),'')
+															END and
+					  isnull(substring(ItemNo,14,1),'') =	CASE isnull(substring(@StrVar,3,1),'')
+																	WHEN '?' THEN isnull(substring(ItemNo,14,1),'')
+																			 ELSE isnull(substring(@StrVar,3,1),'')
+															END) or
+					  CHARINDEX(isnull(substring(IM.ItemNo,12,3),''), @VarList) > 0) and
+					--Web Enabled
+					(isnull(WebEnabledInd,'0') >= @StrWeb AND isnull(WebEnabledInd,'0') <= @EndWeb)) AltSell
+			ON		Base.ItemNo = AltSell.ItemNo LEFT OUTER JOIN
+			(--SuperUM
+			 SELECT	IM.ItemNo,
+					IM.SuperUM as SuperUM,
+					IUM.QtyPerUM as SuperQty
+			 FROM	ItemMaster IM inner join
+					ItemUM IUM
+			 ON		pItemMasterID = fItemMasterID
+			 WHERE	IM.SuperUM = IUM.UM AND
+					--Category
+					((isnull(LEFT(IM.ItemNo,5),'') BETWEEN @StrCat AND @EndCat) or
+					  CHARINDEX(isnull(LEFT(IM.ItemNo,5),''), @CatList) > 0) and
+					--Size
+					((isnull(substring(IM.ItemNo,7,4),'') BETWEEN @StrSize AND @EndSize) or
+					  CHARINDEX(isnull(substring(IM.ItemNo,7,4),''), @SizeList) > 0) and
+					--Variance
+					((isnull(substring(ItemNo,12,3),'') BETWEEN @StrVar AND @EndVar) or
+					 (isnull(substring(ItemNo,12,1),'') =	CASE isnull(substring(@StrVar,1,1),'')
+																	WHEN '?' THEN isnull(substring(ItemNo,12,1),'')
+																			 ELSE isnull(substring(@StrVar,1,1),'')
+															END and
+					  isnull(substring(ItemNo,13,1),'') =	CASE isnull(substring(@StrVar,2,1),'')
+																	WHEN '?' THEN isnull(substring(ItemNo,13,1),'')
+																			 ELSE isnull(substring(@StrVar,2,1),'')
+															END and
+					  isnull(substring(ItemNo,14,1),'') =	CASE isnull(substring(@StrVar,3,1),'')
+																	WHEN '?' THEN isnull(substring(ItemNo,14,1),'')
+																			 ELSE isnull(substring(@StrVar,3,1),'')
+															END) or
+					  CHARINDEX(isnull(substring(IM.ItemNo,12,3),''), @VarList) > 0) and
+					--Web Enabled
+					(isnull(WebEnabledInd,'0') >= @StrWeb AND isnull(WebEnabledInd,'0') <= @EndWeb)) SuperEqv
+			ON		Base.ItemNo = SuperEqv.ItemNo
+
+--select * from #tItemUM
+
+
+-------------------
+-- Build #tIBQty --
+-------------------
+--Less than 5 seconds in PFCDEVDB.PERP
+	SELECT	DISTINCT
+			ItemNo
+			,Location
+			,QtyAvail	= sum(case	rtrim(SourceCd)
+									when 'SO' then Qty
+									when 'OH' then Qty
+									when 'RE' then Qty
+									when 'NA' then Qty
+									when 'TO' then Qty
+									else 0 end)
+			,QtyOH		= sum(case	rtrim(SourceCd)
+									when 'OH' then Qty
+									else 0 end)
+			,QtySO		= sum(case	when rtrim(SourceCd)='SO' and isnull(SumItem.StatusCd,'')<>'BO'
+									then abs(Qty)
+									else 0 end)
+			,QtyTrfAlloc= sum(case	rtrim(SourceCd)
+									when 'TO' then abs(Qty)
+									else 0 end)
+			,QtyTrf		= sum(case	rtrim(SourceCd)
+									when 'TI' then Qty
+									else 0 end)
+			,QtyOW		= sum(case	rtrim(SourceCd)
+									when 'OW' then Qty
+									else 0 end)
+			,QtyOO		= sum(case	rtrim(SourceCd)
+									when 'PO' then Qty
+									when 'WO' then Qty
+									else 0 end)
+			,QtyRelProd	= sum(case	rtrim(SourceCd)
+									when 'WO' then Qty
+									else 0 end)
+	INTO	#tIBQty
+	FROM	SumItem (NOLOCK) INNER JOIN
+			LocMaster Branch (NOLOCK)
+	ON		SumItem.Location = Branch.LocID
+	WHERE	--Location
+			((isnull(Location,'') BETWEEN @StrLoc AND @EndLoc) or
+			CHARINDEX(isnull(Location,''), @LocList) > 0) and
+			--Category
+			((isnull(LEFT(ItemNo,5),'') BETWEEN @StrCat AND @EndCat) or
+			  CHARINDEX(isnull(LEFT(ItemNo,5),''), @CatList) > 0) and
+			--Size
+			((isnull(substring(ItemNo,7,4),'') BETWEEN @StrSize AND @EndSize) or
+			  CHARINDEX(isnull(substring(ItemNo,7,4),''), @SizeList) > 0) and
+			--Variance
+			((isnull(substring(ItemNo,12,3),'') BETWEEN @StrVar AND @EndVar) or
+			 (isnull(substring(ItemNo,12,1),'') =	CASE isnull(substring(@StrVar,1,1),'')
+															WHEN '?' THEN isnull(substring(ItemNo,12,1),'')
+																	 ELSE isnull(substring(@StrVar,1,1),'')
+													END and
+			  isnull(substring(ItemNo,13,1),'') =	CASE isnull(substring(@StrVar,2,1),'')
+															WHEN '?' THEN isnull(substring(ItemNo,13,1),'')
+																	 ELSE isnull(substring(@StrVar,2,1),'')
+													END and
+			  isnull(substring(ItemNo,14,1),'') =	CASE isnull(substring(@StrVar,3,1),'')
+															WHEN '?' THEN isnull(substring(ItemNo,14,1),'')
+																	 ELSE isnull(substring(@StrVar,3,1),'')
+													END) or
+			  CHARINDEX(isnull(substring(ItemNo,12,3),''), @VarList) > 0)
+	GROUP BY ItemNo, Location
+
+--select * from #tIBQty
+
+
+---------------------
+-- Build #tIBPOQty --
+---------------------
+--Less than 5 seconds in PFCDEVDB.PERP ???
+	SELECT	POD.ItemNo,
+			POD.ReceivingLocation as Location,
+			sum(POD.QtyOrdered - POD.QtyReceived) as TotPOQtyDue
+	INTO	#tIBPOQty
+	FROM	POHeader POH (NoLock) INNER JOIN
+			PODetail POD (NoLock)
+	ON		POH.pPOHeaderID = POD.fPOHeaderID
+	WHERE	(POH.POSubType between '1' and '20') AND (POD.QtyOrdered - POD.QtyReceived > 0)
+	GROUP BY POD.ItemNo, POD.ReceivingLocation
+
+--select * from #tIBPOQty
+
+
+-------------------
+-- Build #tIBSVC --
+-------------------
+--Less than 5 seconds in PFCDEVDB.PERP  ?????
+	SELECT	DISTINCT
+			IM.ItemNo,
+			sum(CASE WHEN IB.SalesVelocityCd in ('A','B','C','D','E','F','G','H','I','K') THEN 1 ELSE 0 END) as SVCInd
+	INTO	#tIBSVC
+	FROM	ItemMaster IM (NoLock) INNER JOIN
+			ItemBranch IB (NoLock)
+	ON		pItemMasterID = fItemMasterID
+	WHERE	--Category
+			((isnull(LEFT(ItemNo,5),'') BETWEEN @StrCat AND @EndCat) or
+			  CHARINDEX(isnull(LEFT(ItemNo,5),''), @CatList) > 0) and
+			--Size
+			((isnull(substring(ItemNo,7,4),'') BETWEEN @StrSize AND @EndSize) or
+			  CHARINDEX(isnull(substring(ItemNo,7,4),''), @SizeList) > 0) and
+			--Variance
+			((isnull(substring(ItemNo,12,3),'') BETWEEN @StrVar AND @EndVar) or
+			 (isnull(substring(ItemNo,12,1),'') =	CASE isnull(substring(@StrVar,1,1),'')
+															WHEN '?' THEN isnull(substring(ItemNo,12,1),'')
+																	 ELSE isnull(substring(@StrVar,1,1),'')
+													END and
+			  isnull(substring(ItemNo,13,1),'') =	CASE isnull(substring(@StrVar,2,1),'')
+															WHEN '?' THEN isnull(substring(ItemNo,13,1),'')
+																	 ELSE isnull(substring(@StrVar,2,1),'')
+													END and
+			  isnull(substring(ItemNo,14,1),'') =	CASE isnull(substring(@StrVar,3,1),'')
+															WHEN '?' THEN isnull(substring(ItemNo,14,1),'')
+																	 ELSE isnull(substring(@StrVar,3,1),'')
+													END) or
+			  CHARINDEX(isnull(substring(ItemNo,12,3),''), @VarList) > 0) and
+			--Web Enabled
+			(isnull(WebEnabledInd,'0') >= @StrWeb AND isnull(WebEnabledInd,'0') <= @EndWeb)
+	GROUP BY IM.ItemNo
+
+--select * from #tIBSVC
+
+---+++++++++++++++++++++++++++++++++++++++++++++++++++++---
+---               End: Build Work Tables                ---
+---+++++++++++++++++++++++++++++++++++++++++++++++++++++---

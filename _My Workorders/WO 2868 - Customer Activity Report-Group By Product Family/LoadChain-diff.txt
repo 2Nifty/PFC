@@ -1,0 +1,50 @@
+        //tblAging - AR Aging
+        if (dsResult.Tables[1].DefaultView.ToTable().Rows.Count > 0)
+        {
+            dtAging = dsResult.Tables[1].DefaultView.ToTable();
+            LoadAR();
+        }
+
+        //tblHist - Sales Activity
+        if (dsResult.Tables[2].DefaultView.ToTable().Rows.Count > 0)
+        {
+            dtActivity = dsResult.Tables[2].DefaultView.ToTable();
+            LoadActivity();
+            _Period = dtActivity.Rows[0]["MonthName"].ToString().Trim() + " " + Request.QueryString["Period"].ToString().Substring(0, 4);
+            lblPerHist.Text = _Period;
+            lblPerHistBot.Text = _Period;
+            lblPerParam.Text = _Period;
+        }
+
+        //dtSOHistCat - Sales History By Category
+        if (dsResult.Tables[3].DefaultView.ToTable().Rows.Count > 0)
+        {
+            dtSOHistCat = dsResult.Tables[3].DefaultView.ToTable();
+
+if Request.QueryString["RecType"].ToString() = Cust
+{
+            // Add Default GM % to final result
+            if (dsCustDiscPct != null && dsCustDiscPct.Tables[0].Rows.Count > 0)
+                DefaultGMPctJoins(ref dtSOHistCat, dsCustDiscPct.Tables[0]);
+}
+
+            ViewState["dtSOHistCat"] = dtSOHistCat;
+        }
+
+        //dtSOHistGrp - Sales History By Buy Group
+        if (dsResult.Tables[4].DefaultView.ToTable().Rows.Count > 0)
+        {
+            dtSOHistGrp = dsResult.Tables[4].DefaultView.ToTable();
+            ViewState["dtSOHistGrp"] = dtSOHistGrp;
+        }
+
+        if (rdoGroup.SelectedValue.ToString() == "Category")
+        {
+            lblGridHdr.Text = "Sales Summary By Category";
+            dtGrid = (DataTable)ViewState["dtSOHistCat"];
+        }
+        else
+        {
+            lblGridHdr.Text = "Sales Summary By Buy Group";
+            dtGrid = (DataTable)ViewState["dtSOHistGrp"];
+        }

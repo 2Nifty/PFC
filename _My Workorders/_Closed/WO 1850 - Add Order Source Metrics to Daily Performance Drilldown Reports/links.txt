@@ -1,0 +1,47 @@
+A http://10.1.36.34/intranetsite/DashboardDrilldown/MarginRpt.aspx?Location=00~LocName=Corporate~Range=Daily
+B http://10.1.36.34/intranetsite/DashboardDrilldown/MarginRpt.aspx?Location=00~LocName=Corporate~Range=MTD
+	MarginRpt.aspx.cs(41): cmd = new SqlCommand("pDashboardDrilldownDaily", cnxERP);
+	MarginRpt.aspx.cs(47): cmd = new SqlCommand("pDashboardDrilldownMTD", cnxERP);
+
+C http://10.1.36.34/intranetsite/DashboardDrilldown/ProfitRpt.aspx?Location=00~LocName=Corporate~Range=Daily
+D http://10.1.36.34/intranetsite/DashboardDrilldown/ProfitRpt.aspx?Location=00~LocName=Corporate~Range=MTD
+	ProfitRpt.aspx.cs(41): cmd = new SqlCommand("pDashboardDrilldownDaily", cnxERP);
+	ProfitRpt.aspx.cs(47): cmd = new SqlCommand("pDashboardDrilldownMTD", cnxERP);
+
+E http://10.1.36.34/intranetsite/DashboardDrilldown/SalesRpt.aspx?Location=00~LocName=Corporate~Range=Daily
+F http://10.1.36.34/intranetsite/DashboardDrilldown/SalesRpt.aspx?Location=00~LocName=Corporate~Range=MTD
+	SalesRpt.aspx.cs(41): cmd = new SqlCommand("pDashboardDrilldownDaily", cnxERP);
+	SalesRpt.aspx.cs(47): cmd = new SqlCommand("pDashboardDrilldownMTD", cnxERP);
+
+
+
+
+
+
+G1 http://10.1.36.34/intranetsite/DashboardDrilldown/SOHeaderRpt.aspx?Location=00~LocName=Corporate~Customer=******~Invoice=0000000000~Range=Daily
+H1 http://10.1.36.34/intranetsite/DashboardDrilldown/SOHeaderRpt.aspx?Location=00~LocName=Corporate~Customer=******~Invoice=0000000000~Range=MTD
+	SOHeaderRpt.aspx.cs(40): cmd = new SqlCommand("pDashboardSODrilldownDaily", cnxERP);
+	SOHeaderRpt.aspx.cs(46): cmd = new SqlCommand("pDashboardSODrilldownMTD", cnxERP);
+
+G2 http://10.1.36.34/intranetsite/DashboardDrilldown/SOCustomerRpt.aspx?Location=00~LocName=Corporate~Customer=000000~Invoice=**********~Range=Daily
+H2 http://10.1.36.34/intranetsite/DashboardDrilldown/SOCustomerRpt.aspx?Location=00~LocName=Corporate~Customer=000000~Invoice=**********~Range=MTD
+	SOCustomerRpt.aspx.cs(37): cmd = new SqlCommand("pDashboardSODrilldownDaily", cnxERP);
+	SOCustomerRpt.aspx.cs(43): cmd = new SqlCommand("pDashboardSODrilldownMTD", cnxERP);
+
+I http://10.1.36.34/intranetsite/DashboardDrilldown/SODetailRpt.aspx?Location=00~LocName=Corporate~Customer=000000~Invoice=0000000000~Range=Daily
+J http://10.1.36.34/intranetsite/DashboardDrilldown/SODetailRpt.aspx?Location=00~LocName=Corporate~Customer=000000~Invoice=0000000000~Range=MTD
+	SODetailRpt.aspx.cs(40): cmd = new SqlCommand("pDashboardSODrilldownDaily", cnxERP);
+	SODetailRpt.aspx.cs(46): cmd = new SqlCommand("pDashboardSODrilldownMTD", cnxERP);
+
+
+
+
+
+
+K http://10.1.36.34/intranetsite/DashboardDrilldown/ProfitLbRpt.aspx?Location=00~LocName=Corporate~Range=Daily
+L http://10.1.36.34/intranetsite/DashboardDrilldown/ProfitLbRpt.aspx?Location=00~LocName=Corporate~Range=MTD
+	ProfitLbRpt.aspx.cs(41): cmd = new SqlCommand("pDashboardDrilldownDaily", cnxERP);
+	ProfitLbRpt.aspx.cs(47): cmd = new SqlCommand("pDashboardDrilldownMTD", cnxERP);
+
+
+

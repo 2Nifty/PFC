@@ -1,0 +1,17 @@
+[Porteous 5-Pilot 2$Customer]
+
+
+
+
+New code for checking updates against the date field
+
+WHERE	[Last Date Modified] >= CAST(DATEPART(yyyy,@LastDate) as varchar(4)) + '-' + CAST(DATEPART(mm,@LastDate) as VARCHAR(2)) + '-' + CAST(DATEPART(dd,@LastDate) AS varchar(2)) AND
+	DATEPART(yyyy,[Last Update])+DATEPART(mm,[Last Update])+DATEPART(dd,[Last Update])+DATEPART(hh,[Last Update])+DATEPART(mi,[Last Update]) <> DATEPART(yyyy,@LastDate)+DATEPART(mm,@LastDate)+DATEPART(dd,@LastDate)+DATEPART(hh,@LastDate)+DATEPART(mi,@LastDate)
+
+
+
+
+
+Old Code:
+WHERE	[Last Date Modified] >= CAST(DATEPART(yyyy,@LastDate) as varchar(4)) + '-' + CAST(DATEPART(mm,@LastDate) as VARCHAR(2)) + '-' + CAST(DATEPART(dd,@LastDate) AS varchar(2)) AND
+	[Last Update] <> @LastDate

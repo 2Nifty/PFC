@@ -1,0 +1,10 @@
+Qualifying PO Lines must meet the following criteria:
+
+Not Deleted  - (DeleteDt is not set)
+Not Complete - (CompleteDt is not set)
+Positive outstanding quantity (QtyOrdered - QtyReceived)
+ScheduledReceiptDt must be greater than Jan 1, 2010 (to ignore old POs)
+ReceivingLocation must fall between '00' and '88' (inclusive)
+POStatusCd must equal 'B' (RTS-B status only)
+POOrderNo must begin with 0, 1 or 2 only
+PO Line Item must be web enabled

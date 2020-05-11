@@ -1,0 +1,35 @@
+WO2469_Step01_CreateHTIAlias
+- Create tWO2469_HTIAlias
+
+WO2469_Step02_HTI2009
+- Create tWO2469_HTI2009
+- Load CHI, NJ, ATL, DAL & SFS
+- UPDATE PFCItem from tWO2469_HTIAlias
+- Check for valid PFCItem
+- UPDATE AltItem from tWO2469_HTIAlias
+- Check for valid AltItem
+- Create & load tWO2469_HTI2009Summ
+
+WO2469_Step03_HTI2010
+- Create tWO2469_HTI2010
+- Load CHI, NJ, ATL, DAL & SFS
+- UPDATE PFCItem from tWO2469_HTIAlias
+- Check for valid PFCItem
+- UPDATE AltItem from tWO2469_HTIAlias
+- Check for valid AltItem
+- Create & load tWO2469_HTI2010Summ
+
+WO2469_Step04_HTIUsage
+- Create & load tWO2469_HTIUsage
+- UPDATE 60% Categories
+- Create & load tWO2469_HTIUsageSm
+- Round Smalls
+- Create & load tWO2469_HTIUsageLg
+
+WO2469_Step05_HTI_IBU
+- Create & load tWO2469_HTI_IBU
+- UPDATE SalesWght
+
+WO2469_Step06_LoadIBU
+- Create empty ItemBranchUsage records that don't already exist
+- Add USAGE to existing ItemBranchUsage transactions

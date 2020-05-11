@@ -1,0 +1,27 @@
+calc - (SUM(isnull(Dtl.NetUnitPrice,0) * isnull(Dtl.QtyShipped,0)) - SUM(isnull(Dtl.UnitCost,0) * isnull(Dtl.QtyShipped,0))) / SUM(isnull(Dtl.GrossWght,0) * isnull(Dtl.QtyShipped,0)) as GMPerLb,
+calc - (SUM(isnull(Dtl.NetUnitPrice,0) * isnull(Dtl.QtyShipped,0)) - SUM(isnull(IB.AvgCost,0) * isnull(Dtl.QtyShipped,0))) / SUM(isnull(Dtl.NetUnitPrice,0) * isnull(Dtl.QtyShipped,0)) as AvgGMPct,
+calc - (SUM(isnull(Dtl.NetUnitPrice,0) * isnull(Dtl.QtyShipped,0)) - SUM(isnull(IB.PriceCost,0) * isnull(Dtl.QtyShipped,0))) / SUM(isnull(Dtl.NetUnitPrice,0) * isnull(Dtl.QtyShipped,0)) as PriceGMPct,
+calc - SUM((isnull(Dtl.NetUnitPrice,0) * isnull(Dtl.QtyShipped,0)) - (isnull(Dtl.UnitCost,0) * isnull(Dtl.QtyShipped,0))) as GMDollars,
+calc - SUM(isnull(Dtl.NetUnitPrice,0) * isnull(Dtl.QtyShipped,0)) / SUM(isnull(Dtl.GrossWght,0) * isnull(Dtl.QtyShipped,0)) as DollarsPerLb,
+
+
+
+
+SUM(isnull(IB.AvgCost,0) * isnull(Dtl.QtyShipped,0)) as AvgCostDollars,
+SUM(isnull(IB.PriceCost,0) * isnull(Dtl.QtyShipped,0)) as PriceCostDollars,
+
+
+
+SUM(isnull(Dtl.GrossWght,0) * isnull(Dtl.QtyShipped,0)) as GrossWght
+SUM(isnull(Dtl.NetUnitPrice,0) * isnull(Dtl.QtyShipped,0)) as SalesDollars
+SUM(isnull(Dtl.UnitCost,0) * isnull(Dtl.QtyShipped,0)) as CostDollars
+
+
+
+
+
+SUM(isnull(IB.AvgCost,0) * isnull(Dtl.QtyShipped,0))) 
+SUM(isnull(IB.PriceCost,0) * isnull(Dtl.QtyShipped,0)))
+
+
+

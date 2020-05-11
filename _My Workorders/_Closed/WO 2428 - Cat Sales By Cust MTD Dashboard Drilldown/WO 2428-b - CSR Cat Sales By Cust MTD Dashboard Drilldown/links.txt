@@ -1,0 +1,6 @@
+http://pfcintranet/intranetsite/DashboardDrilldown/CatSalesRpt.aspx?Location=05&LocName=05 - Seattle&Range=MTD&Category=00050
+
+
+http://pfcintranet/intranetsite/DashboardDrilldown/CatSalesRpt.aspx?Location=&LocName=&Range=MTD&Category=00050&CSRName=lmoore
+
+http://pfcintranet/intranetsite/DashboardDrilldown/CSRSalesRpt.aspx?Range=MTD&CSRName=lmoore

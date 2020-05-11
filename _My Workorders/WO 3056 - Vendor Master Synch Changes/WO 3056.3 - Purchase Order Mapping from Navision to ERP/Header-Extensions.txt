@@ -1,0 +1,49 @@
+
+
+
+TotalCost = SUM(PODetail.ExtendedCost)
+
+TotalMaterialCost = SUM(PODetail.ExtendedCost)
+
+TotalExpenseCost = SUM(POExpense.Amount)
+
+OriginalCostOfMaterial = SUM(PODetail.QtyOrdered * PODetail.UnitCost)
+
+OpenMaterialCost = SUM((PODetail.QtyOrdered - PODetail.QtyReceived) * PODetail.UnitCost)
+		   WHERE isnull(CompleteDt,'') = ''
+
+TotalNetWeight = SUM(PODetail.ExtendedWeight)
+
+TotalGrossWeight = SUM(PODetail.ExtendedGrossWeight)
+
+
+
+---------------------------------------------------------------------------------------------------------
+
+
+Existing calcs in pPOEExt stored procedure
+
+POHeader.TotalCost = SUM(PODetail.ExtendedCost)
+POHeader.TotalNetWeight = SUM(PODetail.ExtendedWeight)
+
+ 
+Calcs to be added
+
+POHeader.TotalGrossWeight = SUM(PODetail.ExtendedGrossWeight)
+
+POHeader.TotalMaterialCost = SUM(PODetail.ExtendedCost)
+
+POHeader.TotalExpenseCost = SUM(POExpense.Amount)
+
+?? POHeader.OriginalCostOfMaterial = SUM(PODetail.
+
+POHeader.OpenMaterialCost = SUM(PODetail.ExtendedCost) open lines only
+
+
+
+
+I am already doing these in my NV LoadPO: TotalMaterialCost, TotalExpenseCost & TotalCost
+ - My calc for TotalCost is POHeader.TotalMaterialCost + POHeader.TotalExpenseCost
+
+
+

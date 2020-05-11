@@ -1,0 +1,56 @@
+- Step01: Create tWO1376_Daily_SO_EDI_To_ERP [NV]
+- Step02: Create tWO1376_Daily_SO_EDI_To_ERP [ERP]
+- Step03: Find Orders to Convert [NV]
+  Includes OpenDataSource:
+	    - PFCERPDB.PERP.dbo.AppPref
+	    - PFCERPDB.PERP.dbo.EDITradingPartner
+	    - PFCERPDB.PERP.dbo.CustomerMaster
+- Step04: Copy tWO1376_Daily_SO_EDI_To_ERP [NV to ERP]
+- Step05: Load SOHeader
+- Step06: UPDATE OrderFreightCd
+- Step07: UPDATE OrderCarrier, OrderPriorityCd & OrderExpdCd
+- Step08: UPDATE PriceCd
+- Step09: Load SODetail
+  Includes OpenDataSource:
+	    - EnterpriseSQL.PFCLive.dbo.[Porteous$Sales Line]
+- Step10: UPDATE Costs from ItemBranch
+- Step11: Load SOExpense
+  Includes OpenDataSource:
+	    - EnterpriseSQL.PFCLive.dbo.[Porteous$Sales Line]
+- Step12: Load SOComments [CT]
+  Includes OpenDataSource:
+	    - EnterpriseSQL.PFCLive.dbo.[Porteous$Sales Comment Line]
+- Step13: Load SOComments [LC]
+  Includes OpenDataSource:
+	    - EnterpriseSQL.PFCLive.dbo.[Porteous$Sales Line Comment Line]
+- Step14: UPDATE OrderNo & fSOHeaderID
+- Step15: UPDATE OrderTypeDesc & SubType
+- Step16: UPDATE Credit Memos & Returns in SODetail
+- Step17: UPDATE Credit Memos & Returns in SOExpense
+- Step18: UPDATE Location Names
+- Step19: UPDATE SOHeader RefSONo + '-ERP'
+- Step20: UPDATE tWO1376_Daily_SO_EDI_To_ERP RefSONo + '-ERP' [NV]
+- Step21: UPDATE tWO1376_Daily_SO_EDI_To_ERP RefSONo + '-ERP' [ERP]
+- Step22: UPDATE OrderFreightName & OrderCarName
+- Step23: UPDATE ReasonCdName, LineReasonDsc & HoldReasonName
+- Step24: UPDATE SalesRepName & CustSvcRepName
+  Includes OpenDataSource:
+	    - EnterpriseSQL.PFCLive.dbo.[Porteous$Salesperson_Purchaser]
+- Step25: UPDATE OrderPriName, OrderExpdCdName & LineExpdCdDsc
+- Step26: UPDATE SellStkUM, SellStkQty, AlternateUMQty, AlternateUM & SuperEquivUM
+- Step27: UPDATE SellStkFactor, SuperEquivQty & AlternatePrice
+- Step28: UPDATE TotalCost & TotalCost2
+- Step29: UPDATE NetSales
+- Step30: UPDATE DiscountAmount
+  Includes OpenDataSource:
+	    - EnterpriseSQL.PFCLive.dbo.[Porteous$Sales Header]
+- Step31: UPDATE NonTaxAmt & NonTaxExpAmt
+- Step32: UPDATE TotalOrder
+- Step33: UPDATE ShipWght & BOLWght
+- Step34: UPDATE CustShipLoc, ShipLoc, ShipLocName & IMLoc
+- Step35: Create List of EDI Orders
+- Step36: Email EDI Orders
+- Step37: Create List of Blank ShipLocs
+- Step38: Email Blank ShipLocs
+- Step39: DROP tWO1376_Daily_SO_EDI_To_ERP [NV]
+- Step40: DROP tWO1376_Daily_SO_EDI_To_ERP [ERP]

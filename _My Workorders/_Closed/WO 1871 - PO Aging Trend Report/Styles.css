@@ -1,0 +1,742 @@
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #003366;
+}
+.Left5pxPadd {
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-right: 5px;
+}
+
+/* Locks the left column */
+td.locked, th.locked {
+padding-left: 5px;
+position:relative;
+/*background-color:#efefef;*/
+border-bottom:0px;
+border-top:0px;
+border-left:0px;
+border-right:solid 1px #DAEEEF;
+cursor: default; 
+left: expression(document.getElementById("divdtlgrid").scrollLeft-2); /*IE5+ only*/
+}
+
+/* Keeps the header as the top most item. Important for top left item*/
+th.locked {z-index: 99;}
+
+td.lock, th.lock {
+padding-left: 5px;
+position:relative;
+/*background-color:#efefef;*/
+border-bottom:0px;
+border-top:0px;
+border-left:0px;
+border-right:solid 1px #DAEEEF;
+cursor: default; 
+z-index: 99;
+top: expression(document.getElementById("divdtlgrid").scrollTop-2); /*IE5+ only*/
+left: expression(document.getElementById("divdtlgrid").scrollLeft-2); /*IE5+ only*/
+}
+
+
+.redtitle {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #CC0000;
+	font-weight: bold;
+	padding-left: 10px;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #CEEAF4;
+}
+.redtitle2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #CC0000;
+	font-weight: bold;
+	padding-left: 10px;
+}
+
+/* Left Frame Style */
+.LeftBg {
+	background-color: #A5DEEE;
+	background-image: url(../Images/LeftBg.jpg);
+	background-repeat: repeat-x;
+	background-position: left top;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #8CD5EA;
+}
+.ShowHideBarBk {
+	background-color: #E9F7FB;
+	background-image: url(../Images/SHBk.jpg);
+	background-repeat: repeat-y;
+	background-position: right top;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #2085A2;
+}
+/* Left Menu Style */
+.leftMenuItemBorder {
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #F2FAFD;	
+	border-bottom-color: #A4DDEE;
+	height: 23px;
+}
+.leftMenuItem 
+{
+	height: 23px;
+	/*padding-left: 20px;*/
+	text-decoration: none;	
+}
+
+.leftMenuItem a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #003366;
+	text-decoration: none;
+}
+.leftMenuItem a:link {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #003366;
+	text-decoration: none;
+}
+
+.leftMenuItem a:visited {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #003366;
+	text-decoration: none;
+}
+.leftMenuItem a:active {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #003366;
+	text-decoration: none;
+}
+.leftMenuItem a:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #ffffff;
+	text-decoration: underline;
+}
+
+.leftMenuItemMo {
+	height: 23px;
+	/*padding-left: 20px;*/
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;	
+	color: #FFFFFF;	
+	background-color: #186c85;
+	cursor: hand;	
+}
+.leftMenuItemMo a:link{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;	
+	color: #FFFFFF;	
+	background-color: #186c85;
+	cursor: hand;	
+}
+.leftMenuItemMo a:active{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;	
+	color: #FFFFFF;	
+	background-color: #186c85;
+	cursor: hand;	
+}
+.leftMenuItemMo a:visited{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;	
+	color: #FFFFFF;	
+	background-color: #186c85;
+	cursor: hand;
+	
+}
+.leftMenuItemMo a:hover{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;	
+	color: #FFFFFF;	
+	background-color: #186c85;
+	cursor: hand;
+	text-decoration:none;
+	
+}
+.TopMenuMo {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #FFFFFF;
+	padding-top: 2px;
+	padding-right: 15px;
+	padding-left: 15px;
+	padding-bottom: 2px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #1f809c;
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-right-color: #185161;
+	border-left-color: #558594;
+	background-image: url(../Images/topMenuBgMo.jpg);
+	background-repeat: repeat-x;
+	cursor: hand;
+	height: 24px;
+	background-color: #104554;
+}
+
+
+/* Updated on 08/10/2007 */
+.PageBg {
+	background-color: #B3E2F0;
+	/*padding: 3px;*/
+}
+.TabHead {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #003366;	
+}
+
+.splitBorder 
+{
+	border-bottom:1px Solid #8BD3E9;
+	border-top:1px Solid #D3EEF5;
+	border-right:0px;
+	border-left:0px;
+}
+.btm_splitBorder 
+{
+	border-bottom:1px Solid #8BD3E9;	
+	border-right:0px;
+	border-left:0px;
+}
+
+
+.GridHead {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight:bold;
+	color: #3A3A56;
+	padding-top: 5px;
+	padding-bottom: 5px;
+
+}
+
+.GridHead a:link {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #3A3A56;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-decoration: none;
+}
+
+.GridHead a:active {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #3A3A56;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-decoration: none;
+}
+.GridHead a:visited {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #3A3A56;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-decoration: none;
+}
+.GridHead a:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #3A3A56;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-decoration: none;
+}
+.Sbar
+{ 
+scrollbar-face-color: #9EDEEC;
+scrollbar-shadow-color: #28AFCC;
+scrollbar-highlight-color: #ECF8FB;
+scrollbar-3dlight-color: #ffffff;
+scrollbar-darkshadow-color: #B1E7F1;
+scrollbar-track-color: #E4F7FA;
+scrollbar-arrow-color: #1D7E94;
+}
+
+.cnt 
+{
+	font-family: Arial;	
+	font-size: 11px;	
+	font-weight: normal;	
+	color: #000000;	
+	margin-left: 5px;
+}
+.Searchcnt 
+{
+	font-family: Arial;	
+	font-size: 11px;	
+	font-weight: normal;	
+	color: #000000;
+	
+}
+.GridHd {
+	background-color: #C4E1E3;
+	border: 1px solid #97CACE;
+	padding: 3px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #3A6D76;
+	height: 22px;
+	cursor:hand;
+	
+}
+
+
+.GridHd a:link{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color:#3A6D76;
+	text-decoration: none;
+	
+}
+
+.GridHd a:active{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #3A6D76;
+	text-decoration: none;
+	
+}
+
+.GridHd a:visited{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #00;
+	text-decoration: none;
+
+}
+
+.GridHd a:hover{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #4AA8B3;
+	text-decoration: none;
+	cursor:hand;
+	
+}
+
+.link {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight:normal;
+	color: #003366;
+	padding-top: 5px;
+	padding-bottom: 5px;
+
+}
+
+.link a:link {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #003366;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-decoration: none;
+}
+
+.link a:active {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #003366;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-decoration: none;
+}
+.link a:visited {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #003366;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-decoration: none;
+}
+.link a:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #003366;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-decoration: none;
+}
+		
+.MarkItUp_ContextMenu_MenuTable {
+	border: 1 black solid ;
+	padding: 1 1 1 1 ;
+	shadow: 4 4 4 4 ;
+	z-index: 99 ;
+	background:	white;
+	position: absolute;
+	 top: 0;  
+    left: 0; 
+    filter:	 progid:DXImageTransform.Microsoft.Shadow(color="#B1E7F1", Direction=135, Strength=4) alpha(Opacity=100);
+}
+
+.MarkItUp_ContextMenu_MenuItemBar {
+	border:			1px solid White;
+	width:			100% ;
+	cursor:			default  ;
+}
+
+.MarkItUp_ContextMenu_MenuItemBar_Over {
+	background:		#ECF3FF;
+	width:			100%;
+	cursor:			hand;
+	font-family: Verdana;
+	font-size: smaller;
+	border-bottom: 1px solid #79ABFF;
+}
+
+.MarkItUp_ContextMenu_MenuItem {
+	font-family: Verdana;
+	font-size: 10px;
+	color:	black;
+	text-decoration: none;
+	border-bottom: 1px solid #FFFFFF;
+}
+.MarkItUp_ContextMenu_Outline {
+	border-top: 1px solid #C4DAFF;
+	border-right: 1px solid #79ABFF;
+	border-bottom: 1px solid #79ABFF;
+	border-left: 1px solid #C4DAFF;
+	}
+
+
+.bgmsgboxtile {
+	background-image: url(../Images/bgmsgboxtile.jpg);
+	background-repeat: repeat-x;
+	border: thin solid #b3e2f0;
+	background-color: #cfedf5;
+	background-position: left bottom;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #003366;
+	
+}
+.bgtxtbox {
+	background-repeat: repeat-x;
+	border: thin solid #b3e2f0;
+	background-color: #FFFFFF;
+	background-position: left bottom;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	padding: 1px;
+}
+.txtBlue {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #003366;
+	padding-left:5px;
+	
+}
+
+/* START -  Added for SOE Main Order Entry GUI Changes - 14, Nov 2007 */
+.bold {font-weight:bold;}
+.lbl_whitebox 
+	{
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 11px;
+		color: #003366;	
+		background:#ffffff;	
+		border: 1px solid Gray;
+		font-weight:normal;
+		height: 14px;
+		padding-top: 2px;
+		padding-right: 2px;
+		padding-bottom: 2px;
+		padding-left: 2px;
+		text-align: left;
+	}
+	
+	
+.lblbox 
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #003366;		
+	border: 0px Gray;
+	font-weight:normal;	
+	height: 15px;
+	padding-top: 2px;
+	padding-right: 2px;
+	padding-bottom: 2px;
+	padding-left: 0px;
+	text-align: left;	
+	
+}
+/* END -  Added for SOE Main Order Entry GUI Changes - 14, Nov 2007 */
+
+
+.r_border{border-right:1px solid #9AB8C3;}
+
+.l_border{border-left:1px solid #9AB8C3;}
+
+.t_border{border-top:1px solid #9AB8C3;}
+
+.b_border{border-bottom:1px solid #9AB8C3;}
+
+/* GER Style */
+
+.bgheaderbartile {
+	background-image: url(../images/bgpoptile.jpg);
+	background-repeat: repeat-x;
+	height: 27px;
+}
+.txtTime {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	background-position: center center;
+	font-weight: bold;
+}
+.bgtime {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #000000;
+	vertical-align: middle;
+	background-image: url(../images/bgtime.gif);
+	background-position: center top;
+	text-align: center;
+	background-repeat: no-repeat;
+	height: 25px;
+}
+.txtLogin {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #FFFFFF;
+	padding: 4px;
+	font-weight: bold;
+}
+
+
+
+
+.PageHead {
+	background-color: #EFF9FC;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: #BCE6F2;
+	font-size: 16px;
+	font-weight: bold;
+	color: #3A3A56;
+	height: 40px;
+}
+.PageHeader
+{
+	background:url(../images/headerBg.jpg) repeat-x;
+	height:35px; 
+	vertical-align:top;
+}
+
+#userInfo table
+{
+	width:auto;
+	text-align:center;
+}
+.userinfobg 
+{
+	background:url(../images/userinfo_bg.gif) repeat-x;
+	padding:0px 10px;
+}
+.userinfobgrev 
+{
+	background:url(../images/userinfo_bg_rev.gif) repeat-x;
+	padding:0px 10px;
+}
+.userinfobg label
+{
+	padding-left:20px;
+	color:#ffffff;
+}
+.userinfobg label.Date
+{
+	background:url(../images/clock.gif) no-repeat 0px -2px;
+}
+.userinfobg span
+{
+	padding-left:20px;
+	color:#ffffff;
+}
+.userinfobg span.Date
+{
+	background:url(../images/clock.gif) no-repeat 0px -2px;
+}
+
+.BannerBg {
+	background-image: url(../Images/bannerbk.jpg);
+	background-repeat: repeat-x;
+}
+.bannerImg {
+	background-image: url(../Images/FinalBanner.jpg);
+	background-repeat: no-repeat;
+	height: 97px;
+}
+.BannerText {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	font-weight:normal;
+	color: #CC0000;
+	padding-right: 20px;
+	padding-bottom: 5px;
+}
+.BanText {
+    color: #CC0000; 
+    font-size: 18px; 
+    margin: 0px; 
+    padding: 0px; 
+    font-weight: normal;
+    line-height: 35px; 
+    margin-left: 10px;
+}
+.LoginFormBk {
+	background-color: #FFFFFF;
+	background-image: url(../Images/LoginFormBk.jpg);
+	background-repeat: repeat-x;
+	background-position: left top;
+	height: 200px;
+}
+.BlueBorder {
+	border: 1px solid #4BBADE;
+}
+.BluBg {
+	background-color: #bce6f2;
+}
+.lightBlueBg  {
+	background:#ECF9FB;
+	border-bottom:1px solid #88D2E9;
+	padding-right: 5px;
+}
+.TabHeadBk {
+	background-image: url(../Images/TabHeadBk.jpg);
+	background-repeat: repeat-x;
+	background-position: left bottom;
+	height: 30px;
+}
+.blackTxt {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	text-decoration:none;
+	padding:5px 0px 5px 5px !important;
+}
+.blackTxt a:link {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	text-decoration:none;
+}
+.blackTxt a:visited{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	text-decoration:none;
+}
+.blackTxt a:active{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	text-decoration:none;
+}
+.blackTxt a:hover{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #cc0000;
+	text-decoration:underline;
+}
+.boldText {
+	font-weight: bold;
+}
+.10pxPadding {
+	padding: 10px;
+}
+.Left2pxPadd {
+	padding-left: 5px;
+}
+.Right2pxPadd {
+	padding-right: 5px;
+}
+.txtCenter {
+	text-align: center;
+}
+.txtRight {
+	text-align: right;
+}
+
+.FormCtrl {
+	/*background-color: #f8f8f8;*/
+	border: 1px solid #cccccc;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #003366;
+	width: 120px;
+	height: 15px;
+}
+
+/* Div container to wrap the datagrid */
+div#div-datagrid {
+width: 1000px;
+height: 400px;
+overflow: auto;
+}
+
+table.grid {border:1px solid #CDECF6;}
+table.grid tr.gridHeader th,table.grid tr.gridHeader td{background:#B8E3F3 url(../images/table_HdBg.jpg) repeat-x;color: #003366;font-weight:bold;}
+table.grid tr.gridHeader td{height:22px;}
+table.grid tr td,table.grid tr th{border:1px solid #CDECF6;}
+table.noBorder tr td,table.noBorder tr th{border:0px;}
+table.grid tr td {color:#333333;height:22px;padding-right: 5px;}
+
+.zebra td{background:#ECF9FB;padding-right: 5px;}
+
+.gridItem {	
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	padding-right:5px;
+}
+
+/* 29, Nov 2007 -START - Added for Removing UserControl in header & changeing font color to #003366*/
+#dateContainer h5{ font-size:11px; font-weight:bold;margin:0px 10px;padding:0px;text-align:center;background:url(../images/datrightBg.gif) no-repeat right top; line-height:21px;}
+#dateContainer {width:200px;overflow:visible;background:url(../images/datleftBg.gif) no-repeat left top;margin-top:2px;}
+body, td, th, input {color:#003366 !important;}
+input {padding-right:2px;}
+.item td,
+.itemShade td{color:#333333 !important;}
+/* 29, Nov 2007 -END - Added for Removing UserControl in header & changeing font color to #003366 - */

@@ -1,0 +1,34 @@
+UPDATE ERP Invoice History Files on PFCSQLP
+ - Step01: TRUNCATE Hist BKP Tables
+ - Step02: Backup SOHeaderHist
+ - Step03: Backup SODetailHist
+ - Step04: Backup SOExpenseHist
+ - Step05: UPDATE Invoice Headers
+ - Step06: UPDATE Invoice Credit Memo Headers
+ - Step07: UPDATE OrderLoc
+ - Step08: UPDATE OrderTermsName
+ - Step09: UPDATE OrderFreightCd
+ - Step10: UPDATE OrderCarrier
+ - Step11: UPDATE OrderPriorityCd & OrderExpdCd
+ - Step12: UPDATE PriceCd
+ - Step13: CREATE tWO1341ItemBranch
+ - Step14: UPDATE Invoice Detail
+ - Step15: UPDATE Invoice Credit Memo Detail
+ - Step16: DROP tWO1341ItemBranch
+ - Step17: UPDATE Invoice Expenses
+ - Step18: UPDATE Invoice Credit Memo Expenses
+ - Step19: UPDATE ExcludedFromUsageFlag
+ - Step20: UPDATE OrderType
+ - Step21: UPDATE OrderTypeDesc & SubType
+ - Step22: CREATE tWO1341LocMaster
+ - Step23: Update Location Names - OrderLocName, ShipLocName, UsageLocName
+ - Step24: DROP tWO1341LocMaster
+ - Step25: UPDATE OrderFreightName & OrderCarName
+ - Step26: UPDATE ReasonCdName, LineReasonDsc & HoldReasonName
+ - Step27: UPDATE SalesRepName & CustSvcRepName
+ - Step28: UPDATE OrderPriName, OrderExpdCdName & LineExpdCdDsc
+ - Step29: UPDATE SellStkUM, SellStkQty, AlternateUMQty, AlternateUM & SuperEquivUM
+ - Step30: UPDATE SellStkFactor & SuperEquivQty
+ - Step31: UPDATE AlternatePrice
+ - Step32: UPDATE TotalCost2
+ - Step33: UPDATE NonTaxAmt & TotalOrder

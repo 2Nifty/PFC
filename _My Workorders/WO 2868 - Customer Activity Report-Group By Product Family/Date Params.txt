@@ -1,0 +1,17 @@
+CustNo: 011571
+
+Period: 201204 - BegCurDt: Mar 25 2012 - EndCurDt: Apr 28 2012
+
+LastPeriod: 201104 - BegLastDt: Mar 27 2011 - EndLastDt: Apr 30 2011
+
+PrevPeriod: 201004 - BegPrevDt: Mar 28 2010 - EndPrevDt: May  1 2010
+
+MTDPer: 201204 - BegCurMTD: Mar 25 2012 - EndCurMTD: Apr 28 2012
+
+YTDPer: 201109 - BegCurYTD: Aug 28 2011 - EndCurYTD: Apr 28 2012 - EndYTDPer: 201204
+
+LastYTD: 2011 - BegLastYTDPer: 201009 - BegLastYTD: Aug 29 2010 - EndLastYTD: Apr 30 2011 - EndLastYTDPer: 201104
+
+PrevYTD: 2010 - BegPrevYTDPer: 200909 - BegPrevYTD: Aug 30 2009 - EndPrevYTD: May  1 2010 - EndPrevYTDPer: 201004
+
+LastFiscalMthBeginDt: Jul 31 2011 - LastFiscalMthEndDt: Aug 27 2011 - CuvnalYearMo12: 201108 - CuvnalYearMo: 201207

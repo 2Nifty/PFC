@@ -1,0 +1,38 @@
+Prompt:
+http://pfcintranet/IntranetSite/eCommerceReport/eCommerceSalesAnalysisUserPrompt.aspx
+
+Month
+http://pfcintranet/IntranetSite/eCommerceReport/eCommerceQuote2OrderAnalysis.aspx?Month=08&Year=2011&Branch=15&CustNo=&StartDate=&EndDate=&MonthName=August&BranchName=15 - Santa Fe Springs&RepNo=SFS_IREBRO&RepName=Irene Brockelmeyer&PriceCdCtl=false
+http://localhost/  IntranetSite/eCommerceReport/eCommerceQuote2OrderAnalysis.aspx?Month=08&Year=2011&Branch=15&CustNo=&StartDate=&EndDate=&MonthName=August&BranchName=15 - Santa Fe Springs&OrdSrc=ALL&RepNo=SFS_IREBRO&RepName=Irene Brockelmeyer&PriceCdCtl=false
+http://localhost/  IntranetSite/eCommerceReport/eCommerceQuote2OrderAnalysis.aspx?Month=08&Year=2011&Branch=15&CustNo=&StartDate=&EndDate=&MonthName=August&BranchName=15 - Santa Fe Springs&OrdSrc=ALLCSR&RepNo=SFS_IREBRO&RepName=Irene Brockelmeyer&PriceCdCtl=false
+http://localhost/  IntranetSite/eCommerceReport/eCommerceQuote2OrderAnalysis.aspx?Month=08&Year=2011&Branch=15&CustNo=&StartDate=&EndDate=&MonthName=August&BranchName=15 - Santa Fe Springs&OrdSrc=ALLEC&RepNo=SFS_IREBRO&RepName=Irene Brockelmeyer&PriceCdCtl=false
+http://localhost/  IntranetSite/eCommerceReport/eCommerceQuote2OrderAnalysis.aspx?Month=08&Year=2011&Branch=15&CustNo=&StartDate=&EndDate=&MonthName=August&BranchName=15 - Santa Fe Springs&OrdSrc=WQ&RepNo=SFS_IREBRO&RepName=Irene Brockelmeyer&PriceCdCtl=false
+
+
+
+Range
+http://pfcintranet/IntranetSite/eCommerceReport/eCommerceQuote2OrderAnalysis.aspx?Month=&Year=&Branch=15&CustNo=&StartDate=7/31/2011&EndDate=9/6/2011&MonthName=&BranchName=15 - Santa Fe Springs&RepNo=SFS_IREBRO&RepName=Irene Brockelmeyer&PriceCdCtl=false
+http://localhost/  IntranetSite/eCommerceReport/eCommerceQuote2OrderAnalysis.aspx?Month=&Year=&Branch=15&CustNo=&StartDate=7/31/2011&EndDate=9/3/2011&MonthName=&BranchName=15 - Santa Fe Springs&OrdSrc=ALL&RepNo=SFS_IREBRO&RepName=Irene Brockelmeyer&PriceCdCtl=false
+http://localhost/  IntranetSite/eCommerceReport/eCommerceQuote2OrderAnalysis.aspx?Month=&Year=&Branch=15&CustNo=&StartDate=7/31/2011&EndDate=9/3/2011&MonthName=&BranchName=15 - Santa Fe Springs&OrdSrc=DC&RepNo=SFS_IREBRO&RepName=Irene Brockelmeyer&PriceCdCtl=false
+
+
+
+
+preview
+http://localhost/IntranetSite/eCommerceReportV2/eCommerceSalesAnalysisCustRpt.aspx?Month=12&Year=2009&Branch=15&CustNo=&StartDate=&EndDate=&MonthName=December&BranchName=15 - Santa Fe Springs&OrdSrc=ALL&RepNo=&RepName=All&PriceCdCtl=false&ItemNotOrd=false
+http://localhost/IntranetSite/eCommerceReportV2/eCommerceSalesAnalysisCustRptPreview.aspx?Sort=&Month=08&Year=2011&Branch=15&CustNo=&StartDate=&EndDate=&MonthName=December&BranchName=15 - Santa Fe Springs&OrdSrc=ALL&RepNo=&RepName=All&PriceCdCtl=false&ItemNotOrd=false
+
+
+
+
+http://localhost/IntranetSite/eCommerceReportV2/QuoteAnalysisHdrRpt.aspx?Month=08&Year=2011&StartDate=&EndDate=&CustomerNumber=003081&BranchNumber=15&CustomerName=Ababa Qa&RepName=All&RepNo=&OrdSrc=ALL&ItemNotOrd=false
+
+
+
+
+http://localhost/IntranetSite/eCommerceReportV2/QuoteAnalysisHdrRpt.aspx?Month=08&Year=2011&StartDate=&EndDate=&CustomerNumber=070331&BranchNumber=15&CustomerName=R & E Fasteners&RepName=All&RepNo=&OrdSrc=ALL&ItemNotOrd=false
+
+
+
+
+http://localhost/IntranetSite/eCommerceReportV2/QuoteAnalysisHdrRpt.aspx?Month=08&Year=2011&StartDate=&EndDate=&CustomerNumber=070331&BranchNumber=15&CustomerName='R & E Fasteners'&RepName=All&RepNo=&OrdSrc=ALL&ItemNotOrd=false

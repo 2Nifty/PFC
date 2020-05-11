@@ -1,0 +1,63 @@
+Searching for: db02
+WO1046_UpdateVendorMaster.bas(3877): oCustomTask9.SQLStatement = oCustomTask9.SQLStatement & "--		 FROM	OpenDataSource('SQLOLEDB','Data Source=pfcdb02;User ID=pfcnormal;Password=pfcnormal').PFCFINANCE.dbo.tERPVendDelete VendDel" & vbCrLf
+WO1046_UpdateVendorMaster.bas(3889): oCustomTask9.SQLStatement = oCustomTask9.SQLStatement & "--		 FROM	OpenDataSource('SQLOLEDB','Data Source=pfcdb02;User ID=pfcnormal;Password=pfcnormal').PFCFINANCE.dbo.tERPVendDelete VendDel" & vbCrLf
+WO1046_UpdateVendorMaster.bas(3933): oCustomTask10.SQLStatement = oCustomTask10.SQLStatement & "--FROM	OpenDataSource('SQLOLEDB','Data Source=pfcdb02;User ID=pfcnormal;Password=pfcnormal').PFCFINANCE.dbo.tERPVendUpdate VendUpd" & vbCrLf
+WO1046_UpdateVendorMaster.bas(3978): oCustomTask10.SQLStatement = oCustomTask10.SQLStatement & "--	OpenDataSource('SQLOLEDB','Data Source=pfcdb02;User ID=pfcnormal;Password=pfcnormal').PFCFINANCE.dbo.[tERPVendUpdate] VendUpd" & vbCrLf
+WO1046_UpdateVendorMaster.bas(3981): oCustomTask10.SQLStatement = oCustomTask10.SQLStatement & "--	OpenDataSource('SQLOLEDB','Data Source=pfcdb02;User ID=pfcnormal;Password=pfcnormal').PFCFINANCE.dbo.[Porteous$Location] Loc" & vbCrLf
+WO1046_UpdateVendorMaster.bas(4772): oCustomTask13.SQLStatement = oCustomTask13.SQLStatement & "--FROM	OpenDataSource('SQLOLEDB','Data Source=pfcdb02;User ID=pfcnormal;Password=pfcnormal').PFCFINANCE.dbo.[tERPVendContUpdate] VendUpd" & vbCrLf
+WO1046_UpdateVendorMaster.bas(5611): oCustomTask17.SQLStatement = oCustomTask17.SQLStatement & "--FROM	OpenDataSource('SQLOLEDB','Data Source=pfcdb02;User ID=pfcnormal;Password=pfcnormal').PFCFINANCE.dbo.[tERPVendContUpdate] VendUpd" & vbCrLf
+WO1046_UpdateVendorMaster.bas(5683): oCustomTask19.SQLStatement = oCustomTask19.SQLStatement & "--		 FROM	OpenDataSource('SQLOLEDB','Data Source=pfcdb02;User ID=pfcnormal;Password=pfcnormal').PFCFINANCE.dbo.[tERPVendContDelete] VendDel" & vbCrLf
+WO1046_UpdateVendorMaster.bas(5716): oCustomTask20.SQLStatement = oCustomTask20.SQLStatement & "		 --FROM	OpenDataSource('SQLOLEDB','Data Source=pfcdb02;User ID=pfcnormal;Password=pfcnormal').PFCFINANCE.dbo.[tERPVendContDelete] VendDel" & vbCrLf
+Found 9 occurrence(s) in 1 file(s)
+
+Searching for: erpdb
+WO1046_UpdateVendorMaster.bas(947): oCustomTask1.SQLStatement = oCustomTask1.SQLStatement & "--			 FROM	OpenDataSource('SQLOLEDB','Data Source=PFCERPDB;User ID=pfcnormal;Password=pfcnormal').PERP.dbo.VendorMaster PERP" & vbCrLf
+WO1046_UpdateVendorMaster.bas(981): oCustomTask2.SQLStatement = oCustomTask2.SQLStatement & "--FROM	OpenDataSource('SQLOLEDB','Data Source=PFCERPDB;User ID=pfcnormal;Password=pfcnormal').PERP.dbo.VendorMaster PERP" & vbCrLf
+WO1046_UpdateVendorMaster.bas(1017): oCustomTask3.SQLStatement = oCustomTask3.SQLStatement & "--		     FROM	OpenDataSource('SQLOLEDB','Data Source=PFCERPDB;User ID=pfcnormal;Password=pfcnormal').PERP.dbo.AppPref" & vbCrLf
+WO1046_UpdateVendorMaster.bas(1064): oCustomTask4.SQLStatement = oCustomTask4.SQLStatement & "--			 FROM	OpenDataSource('SQLOLEDB','Data Source=PFCERPDB;User ID=pfcnormal;Password=pfcnormal').PERP.dbo.VendorContact PERP" & vbCrLf
+WO1046_UpdateVendorMaster.bas(1101): oCustomTask5.SQLStatement = oCustomTask5.SQLStatement & "--FROM	OpenDataSource('SQLOLEDB','Data Source=PFCERPDB;User ID=pfcnormal;Password=pfcnormal').PERP.dbo.VendorContact PERP" & vbCrLf
+WO1046_UpdateVendorMaster.bas(1137): oCustomTask6.SQLStatement = oCustomTask6.SQLStatement & "--		     FROM	OpenDataSource('SQLOLEDB','Data Source=PFCERPDB;User ID=pfcnormal;Password=pfcnormal').PERP.dbo.AppPref" & vbCrLf
+WO1046_UpdateVendorMaster.bas(2179): oCustomTask8.SourceSQLStatement = oCustomTask8.SourceSQLStatement & "--	OpenDataSource('SQLOLEDB','Data Source=PFCERPDB;User ID=pfcnormal;Password=pfcnormal').PERP.dbo.VendorMaster Vend" & vbCrLf
+WO1046_UpdateVendorMaster.bas(4029): oCustomTask11.SourceSQLStatement = oCustomTask11.SourceSQLStatement & "--	OpenDataSource('SQLOLEDB','Data Source=PFCERPDB;User ID=pfcnormal;Password=pfcnormal').PERP.dbo.VendorAddress Addr" & vbCrLf
+WO1046_UpdateVendorMaster.bas(4813): oCustomTask14.SQLStatement = oCustomTask14.SQLStatement & "--			 FROM	OpenDataSource('SQLOLEDB','Data Source=PFCERPDB;User ID=pfcnormal;Password=pfcnormal').PERP.dbo.VendorContact PERP" & vbCrLf
+WO1046_UpdateVendorMaster.bas(4861): oCustomTask15.SourceSQLStatement = oCustomTask15.SourceSQLStatement & "--	OpenDataSource('SQLOLEDB','Data Source=PFCERPDB;User ID=pfcnormal;Password=pfcnormal').PERP.dbo.VendorAddress Addr" & vbCrLf
+WO1046_UpdateVendorMaster.bas(5558): oCustomTask16.SQLStatement = oCustomTask16.SQLStatement & "--		     FROM	OpenDataSource('SQLOLEDB','Data Source=PFCERPDB;User ID=pfcnormal;Password=pfcnormal').PERP.dbo.AppPref" & vbCrLf
+WO1046_UpdateVendorMaster.bas(5645): oCustomTask18.SQLStatement = oCustomTask18.SQLStatement & "--FROM	OpenDataSource('SQLOLEDB','Data Source=PFCERPDB;User ID=pfcnormal;Password=pfcnormal').PERP.dbo.VendorContact PERP" & vbCrLf
+Found 12 occurrence(s) in 1 file(s)
+
+
+
+
+Searching for: db05
+WO1046_UpdateVendorMaster.bas(50): oConnection.ConnectionProperties("Data Source") = "pfcdb05"
+WO1046_UpdateVendorMaster.bas(57): oConnection.DataSource = "pfcdb05"
+WO1046_UpdateVendorMaster.bas(3878): oCustomTask9.SQLStatement = oCustomTask9.SQLStatement & "		 FROM	OpenDataSource('SQLOLEDB','Data Source=pfcdb05;User ID=pfcnormal;Password=pfcnormal').PFCFINANCE.dbo.tERPVendDelete VendDel" & vbCrLf
+WO1046_UpdateVendorMaster.bas(3890): oCustomTask9.SQLStatement = oCustomTask9.SQLStatement & "		 FROM	OpenDataSource('SQLOLEDB','Data Source=pfcdb05;User ID=pfcnormal;Password=pfcnormal').PFCFINANCE.dbo.tERPVendDelete VendDel" & vbCrLf
+WO1046_UpdateVendorMaster.bas(3934): oCustomTask10.SQLStatement = oCustomTask10.SQLStatement & "FROM	OpenDataSource('SQLOLEDB','Data Source=pfcdb05;User ID=pfcnormal;Password=pfcnormal').PFCFINANCE.dbo.tERPVendUpdate VendUpd" & vbCrLf
+WO1046_UpdateVendorMaster.bas(3979): oCustomTask10.SQLStatement = oCustomTask10.SQLStatement & "	OpenDataSource('SQLOLEDB','Data Source=pfcdb05;User ID=pfcnormal;Password=pfcnormal').PFCFINANCE.dbo.[tERPVendUpdate] VendUpd" & vbCrLf
+WO1046_UpdateVendorMaster.bas(3982): oCustomTask10.SQLStatement = oCustomTask10.SQLStatement & "	OpenDataSource('SQLOLEDB','Data Source=pfcdb05;User ID=pfcnormal;Password=pfcnormal').PFCFINANCE.dbo.[Porteous$Location] Loc" & vbCrLf
+WO1046_UpdateVendorMaster.bas(4773): oCustomTask13.SQLStatement = oCustomTask13.SQLStatement & "FROM	OpenDataSource('SQLOLEDB','Data Source=pfcdb05;User ID=pfcnormal;Password=pfcnormal').PFCFINANCE.dbo.[tERPVendContUpdate] VendUpd" & vbCrLf
+WO1046_UpdateVendorMaster.bas(5612): oCustomTask17.SQLStatement = oCustomTask17.SQLStatement & "FROM	OpenDataSource('SQLOLEDB','Data Source=pfcdb05;User ID=pfcnormal;Password=pfcnormal').PFCFINANCE.dbo.[tERPVendContUpdate] VendUpd" & vbCrLf
+WO1046_UpdateVendorMaster.bas(5684): oCustomTask19.SQLStatement = oCustomTask19.SQLStatement & "		 FROM	OpenDataSource('SQLOLEDB','Data Source=pfcdb05;User ID=pfcnormal;Password=pfcnormal').PFCFINANCE.dbo.[tERPVendContDelete] VendDel" & vbCrLf
+WO1046_UpdateVendorMaster.bas(5717): oCustomTask20.SQLStatement = oCustomTask20.SQLStatement & "		 FROM	OpenDataSource('SQLOLEDB','Data Source=pfcdb05;User ID=pfcnormal;Password=pfcnormal').PFCFINANCE.dbo.[tERPVendContDelete] VendDel" & vbCrLf
+WO1046_UpdateVendorMaster.bas(5751): oCustomTask21.SQLStatement = oCustomTask21.SQLStatement & "			 FROM	OpenDataSource('SQLOLEDB','Data Source=PFCDB05;User ID=pfcnormal;Password=pfcnormal').PFCFinance.dbo.tERPVendInsert)" & vbCrLf
+WO1046_UpdateVendorMaster.bas(5764): oCustomTask21.SQLStatement = oCustomTask21.SQLStatement & "			 FROM	OpenDataSource('SQLOLEDB','Data Source=PFCDB05;User ID=pfcnormal;Password=pfcnormal').PFCFinance.dbo.tERPVendUpdate)" & vbCrLf
+Found 13 occurrence(s) in 1 file(s)
+
+Searching for: devdb
+WO1046_UpdateVendorMaster.bas(77): oConnection.ConnectionProperties("Data Source") = "pfcdevdb"
+WO1046_UpdateVendorMaster.bas(84): oConnection.DataSource = "pfcdevdb"
+WO1046_UpdateVendorMaster.bas(948): oCustomTask1.SQLStatement = oCustomTask1.SQLStatement & "			 FROM	OpenDataSource('SQLOLEDB','Data Source=PFCDEVDB;User ID=pfcnormal;Password=pfcnormal').PERP.dbo.VendorMaster PERP" & vbCrLf
+WO1046_UpdateVendorMaster.bas(982): oCustomTask2.SQLStatement = oCustomTask2.SQLStatement & "FROM	OpenDataSource('SQLOLEDB','Data Source=PFCDEVDB;User ID=pfcnormal;Password=pfcnormal').PERP.dbo.VendorMaster PERP" & vbCrLf
+WO1046_UpdateVendorMaster.bas(1018): oCustomTask3.SQLStatement = oCustomTask3.SQLStatement & "		     FROM	OpenDataSource('SQLOLEDB','Data Source=PFCDEVDB;User ID=pfcnormal;Password=pfcnormal').PERP.dbo.AppPref" & vbCrLf
+WO1046_UpdateVendorMaster.bas(1065): oCustomTask4.SQLStatement = oCustomTask4.SQLStatement & "			 FROM	OpenDataSource('SQLOLEDB','Data Source=PFCDEVDB;User ID=pfcnormal;Password=pfcnormal').PERP.dbo.VendorContact PERP" & vbCrLf
+WO1046_UpdateVendorMaster.bas(1102): oCustomTask5.SQLStatement = oCustomTask5.SQLStatement & "FROM	OpenDataSource('SQLOLEDB','Data Source=PFCDEVDB;User ID=pfcnormal;Password=pfcnormal').PERP.dbo.VendorContact PERP" & vbCrLf
+WO1046_UpdateVendorMaster.bas(1138): oCustomTask6.SQLStatement = oCustomTask6.SQLStatement & "		     FROM	OpenDataSource('SQLOLEDB','Data Source=PFCDEVDB;User ID=pfcnormal;Password=pfcnormal').PERP.dbo.AppPref" & vbCrLf
+WO1046_UpdateVendorMaster.bas(2180): oCustomTask8.SourceSQLStatement = oCustomTask8.SourceSQLStatement & "	OpenDataSource('SQLOLEDB','Data Source=PFCDEVDB;User ID=pfcnormal;Password=pfcnormal').PERP.dbo.VendorMaster Vend" & vbCrLf
+WO1046_UpdateVendorMaster.bas(4030): oCustomTask11.SourceSQLStatement = oCustomTask11.SourceSQLStatement & "	OpenDataSource('SQLOLEDB','Data Source=PFCDEVDB;User ID=pfcnormal;Password=pfcnormal').PERP.dbo.VendorAddress Addr" & vbCrLf
+WO1046_UpdateVendorMaster.bas(4814): oCustomTask14.SQLStatement = oCustomTask14.SQLStatement & "			 FROM	OpenDataSource('SQLOLEDB','Data Source=PFCDEVDB;User ID=pfcnormal;Password=pfcnormal').PERP.dbo.VendorContact PERP" & vbCrLf
+WO1046_UpdateVendorMaster.bas(4862): oCustomTask15.SourceSQLStatement = oCustomTask15.SourceSQLStatement & "	OpenDataSource('SQLOLEDB','Data Source=PFCDEVDB;User ID=pfcnormal;Password=pfcnormal').PERP.dbo.VendorAddress Addr" & vbCrLf
+WO1046_UpdateVendorMaster.bas(5559): oCustomTask16.SQLStatement = oCustomTask16.SQLStatement & "		     FROM	OpenDataSource('SQLOLEDB','Data Source=PFCDEVDB;User ID=pfcnormal;Password=pfcnormal').PERP.dbo.AppPref" & vbCrLf
+WO1046_UpdateVendorMaster.bas(5646): oCustomTask18.SQLStatement = oCustomTask18.SQLStatement & "FROM	OpenDataSource('SQLOLEDB','Data Source=PFCDEVDB;User ID=pfcnormal;Password=pfcnormal').PERP.dbo.VendorContact PERP" & vbCrLf
+Found 14 occurrence(s) in 1 file(s)
+

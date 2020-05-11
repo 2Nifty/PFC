@@ -1,0 +1,14 @@
+2428.1 - [CustCatSalesSummary] table created 6/6/11 by Tommy III
+
+
+2428.2 & 3 - Process to load [CustCatSalesSummary] table
+[pSOEProcessCustCatSlsSumm] has been created.  It will ultimately be executed nightly in DashBoardRefreshERP.dts.  It will delete & reload the current month CustCatSalesSummary data each night in PFCSQLP (and copied over to PERP if needed).  It can also be used to load historical data by hard coding it for specific periods.  PFCSQLP is currently loaded back to 201009.
+
+
+2428.4 - The new Dashboard Performance Drilldown Screen for MTD Sales by Category & Customer can now be found in QA.
+The new report is accessed from the MTD Sales Perfomance Report which is accessed by clicking one of the Sales $ links on the main Dashboard.  If the Daily Sales $ is clicked, you will notice that the resulting Sales Report remains unchanged; however, if the MTD Sales $ is clicked, the resulting report now shows as link on each category number.  This will link to the new drilldown showing each customer making up the MTD Sales number.  At this point, the Corporate numbers are not balancing perfectly; but, every individual branch I have tried, the nubers match up perfectly.
+
+
+2428.5 - Modify existing Dashboard Drilldown procedures to use CM.CustShipLocation instead of Hdr.CustShipLoc
+Both pLoadDashboardCatLocDaily and pLoadDashboardCustInvDaily procedures have been modified to use the CustomerMaster>CustShipLocation field.  The current data has been rebuilt in QA (TnT).
+

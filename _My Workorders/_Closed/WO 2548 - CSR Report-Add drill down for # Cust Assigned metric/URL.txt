@@ -1,0 +1,19 @@
+http://pfcintranet/intranetsite/systemframeset/CSRReportByCust.aspx?BranchID=00
+
+
+
+link Cust Assigned to: http://pfcintranet/intranetsite/InvoiceAnalysis/InvoiceAnalysisByCustNo.aspx?StartDate=11/11/2011&EndDate=11/12/2011&OrderType=&Branch=&CustNo=&Chain=&WeightFrom=&WeightTo=&ShipToState=&BranchDesc=ALL&OrderTypeDesc=ALL&SalesPerson=Emerie Castillo&SalesRepNo=SFS_EMECAS&PriceCd=&OrderSource=&OrderSourceDesc=*All Orders*&ShipMethod=&ShipMethodName=&SubTotal=0&SubTotalDesc=&SubTotalFlag=false&TerritoryCd=&TerritoryDesc=ALL&CSRName=ALL&CSRNo=&RegionalMgr=ALL&AllCustFlag=false
+
+
+http://pfcerpqa/intranetsite/InvoiceAnalysis/InvoiceAnalysisByCustNo.aspx?
+StartDate=6/29/2011&EndDate=6/29/2011&
+OrderType=&Branch=&CustNo=&Chain=&WeightFrom=&WeightTo=&ShipToState=&
+BranchDesc=ALL&OrderTypeDesc=ALL&
+SalesPerson=Gloria Yanez&SalesRepNo=SFS_GLOYAN&
+PriceCd=&OrderSource=&OrderSourceDesc=*All Orders*&
+ShipMethod=&ShipMethodName=&
+SubTotal=0&SubTotalDesc=&SubTotalFlag=false&
+TerritoryCd=&TerritoryDesc=ALL&
+CSRName=ALL&CSRNo=&RegionalMgr=ALL&AllCustFlag=false
+
+

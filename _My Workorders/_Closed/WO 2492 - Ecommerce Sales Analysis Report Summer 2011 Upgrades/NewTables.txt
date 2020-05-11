@@ -1,0 +1,45 @@
+
+ecomm
+01 --eCommerce Quotes FROM WebActivityPosting WHERE WebActivity.OrderSource[Sequence] = 1
+
+
+
+missed ecomm
+05	--Missed eCommerce Quotes FROM WebActivityPosting WHERE WebActivity.OrderSource = 'WQ' AND isnull(WebActivity.MakeOrderID,'') = ''
+	--	USE MakeOrderID/Dt for "Missed" quotes per CSR 09/22/11
+
+
+
+
+
+manual
+03 --Manual Quotes FROM DTQ_CustomerQuotation WHERE Quote.OrderSource[Sequence] <> 1
+
+
+
+missed manual
+06 --Missed Manual Quotes FROM DTQ_CustomerQuotation WHERE	Quote.OrderSource = 'RQ' AND isnull(Quote.MakeOrderID,'') = ''
+
+
+
+
+---------------------------------
+orders
+
+
+
+eComm_
+02	--eCommerce Orders FROM WebActivityPosting WHERE WebActivity.OrderSource[Sequence] = 1 AND isnull(WebActivity.MakeOrderID,'') <> ''
+	--	[USE MakeOrderID/Dt for completed quotes into orders per CSR 09/22/11]
+	--	[IGNORE Detail tables per Tom White Jr 09/22/11]
+
+
+
+
+Manual
+04 --Manual Orders FROM DTQ_CustomerQuotation WHERE Quote.OrderSource[Sequence] <> 1 AND isnull(Quote.MakeOrderID,'') <> ''
+--	[IGNORE Detail tables per Tom White Jr 09/22/11]
+
+
+
+

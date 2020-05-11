@@ -1,0 +1,60 @@
+
+All processing on PFCSQLP.PFCReports until we copy the data over to PFCERPDB.PERP in Steps 8, 9 & 10
+
+ItemBranchUsageHIST records for 201102 thru 201108 were already re-built on 8/30/11.  Now we can delete those periods from ItemBranchUsage and re-insert them from HIST.
+
+	Step01: DELETE ItemBranchUsage 201102 thru 201108
+	Step02: Re-INSERT ItemBranchUsage 201102 thru 201108 from ItemBranchUsageHist
+
+
+Then we'll load tWO2513_HTI_IBU with all of the HTI 2009/2010 usage history data for 201102 & 201103.  We'll re-load this data into ItemBranchUsage since we lost it in the re-build.
+
+	Step03: Create tWO2513_HTI_IBU
+	Step04: Load tWO2513_HTI_IBU
+	Step05: [HTI] Create empty ItemBranchUsage records that don't already exist
+	Step06: [HTI] Add usage to existing ItemBranchUsage transactions
+
+
+Now we'll have to execute the standard IBUEOMUpdates DTS so that it can execute against all the fresh data that we've created.
+
+	Step07: Execute IBU End Of Month Updates
+		IBUEOMUpdates.dts executes all of the month end IBU updates
+		 - Step01_WO1185_ConvertRodUsageIBU.dts
+		 - Step02_WO1112_ConvertNucorNutsAndMetricsIBU.dts
+		 - Step03_WO1766_MoveBulkUsageFrom01to15IBU.dts
+		 - Step04_WO1856_MoveUsage30to10IBU.dts
+		 - Step05_WO1864_MovePkgUsageToBrn10IBU.dts
+		 - Step06: Execute [pWO2469.3_Ongoing_HTI_Usage_Cnv]
+
+
+Finally we'll truncate the IBU tables on PERP and refresh them completely from PFCReports (and also drop our temp HTI table)
+
+	Step08: TRUNCATE IBU & IBUHist on PERP
+	Step09: Copy PFCReports.ItemBranchUsage to PERP.ItemBranchUsage
+	Step10: Copy PFCReports.ItemBranchUsageHist to PERP.ItemBranchUsageHist
+	Step11: DROP tWO2513_HTI_IBU
+
+
+
+-----------------------------------------------------------------------------------------------------------------
+
+
+
+Step01: DELETE ItemBranchUsage 201102 thru 201108
+Step02: Re-INSERT ItemBranchUsage 201102 thru 201108 from ItemBranchUsageHist
+Step03: Create tWO2513_HTI_IBU
+Step04: Load tWO2513_HTI_IBU
+Step05: [HTI] Create empty ItemBranchUsage records that don't already exist
+Step06: [HTI] Add usage to existing ItemBranchUsage transactions
+Step07: Execute IBU End Of Month Updates
+	IBUEOMUpdates.dts executes all of the month end IBU updates
+	 - Step01_WO1185_ConvertRodUsageIBU.dts
+	 - Step02_WO1112_ConvertNucorNutsAndMetricsIBU.dts
+	 - Step03_WO1766_MoveBulkUsageFrom01to15IBU.dts
+	 - Step04_WO1856_MoveUsage30to10IBU.dts
+	 - Step05_WO1864_MovePkgUsageToBrn10IBU.dts
+	 - Step06: Execute [pWO2469.3_Ongoing_HTI_Usage_Cnv]
+Step08: TRUNCATE IBU & IBUHist on PERP
+Step09: Copy PFCReports.ItemBranchUsage to PERP.ItemBranchUsage
+Step10: Copy PFCReports.ItemBranchUsageHist to PERP.ItemBranchUsageHist
+Step11: DROP tWO2513_HTI_IBU

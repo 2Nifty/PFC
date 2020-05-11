@@ -1,0 +1,19 @@
+Step01: Find records that are in NV5 but not in PERP
+Step02: Find records that are in PERP but not in NV5
+Step03: Find modified records in NV5.0 based on [Last Modified Date] vs @LastDate from AppPref Table
+Step04: Add Vendor Inserts to PERP.VendorMaster
+Step05: Add Vendor Inserts to PERP.VendorAddress
+Step06: Set VendorMaster & VendorAddress DeleteDt for Vendor Deletes
+Step07: Process VendorMaster & VendorAddress Updates in ERP
+
+
+
+
+
+
+
+
+
+
+synch PT BF PTBF
+Update @LastDate in AppPref Table

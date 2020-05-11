@@ -1,0 +1,56 @@
+
+
+2469.2 - Secondary HTI Usage History Load
+
+
+
+WO2469_Step01_CreateHTIAlias.dts
+- Create & Load tWO2469_HTIAlias
+
+
+WO2469_Step02_HTIUsage.dts
+- Update HTIUsage table
+    * UPDATE PFCItem from tWO2469_HTIAlias
+    * Check for valid PFCItem
+    * UPDATE AltItem from tWO2469_HTIAlias
+    * Check for valid AltItem
+- Create & load tWO2469_HTIUsageSumm
+- UPDATE 60% Categories
+- Create & load tWO2469_HTIUsageSm
+- Round Smalls
+- Create & load tWO2469_HTIUsageLg
+- Set LoadID & LoadDt (HTIUsage)
+
+
+WO2469_Step03_HTI_IBU.dts
+- Create & load tWO2469_HTI_IBU
+- UPDATE SalesWght
+- Load HTI_IBU
+
+ 
+WO2469_Step04_LoadIBU.dts
+[This uses tWO2469_HTI_IBU table to update PFC ItemBranchUsage]
+- Create empty ItemBranchUsage records that don't already exist
+- Add USAGE to existing ItemBranchUsage transactions
+
+
+----------------------------------------------------------------
+
+
+7 tables created on PFCSQLP.PFCReports:
+
+tWO2469_HTIAlias
+tWO2469_HTIUsage & tWO2469_HTIUsageSumm
+tWO2469_HTIUsageLg & tWO2469_HTIUsageSm
+tWO2469_HTI_IBU & HTI_IBU
+
+
+
+
+
+
+
+WO2469_Step01_CreateHTIAlias.dts
+WO2469_Step02_HTIUsage.dts
+WO2469_Step03_HTI_IBU.dts
+WO2469_Step04_LoadIBU.dts

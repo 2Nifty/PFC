@@ -1,0 +1,10 @@
+.shadeBgDown 
+{
+	background:url(../images/labels.gif) repeat-x bottom left;
+}
+.shadeBgUp 
+{
+	background:url(../images/labels.gif) repeat-x top left;
+	margin-top:0px; 
+	border-bottom:1px solid #88D2E9;
+}
