@@ -1,0 +1,267 @@
+/* Page comman style*/
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #3A3A56;
+}
+a:active {
+	text-decoration: none;
+	color: #CC0000;
+}
+a:hover {
+	text-decoration: underline;
+	color: #CC0000;
+}
+a:visited {
+	text-decoration: none;
+	color: #000000;
+	
+}
+a:link {
+	text-decoration: none;
+	color: #000000;
+}
+a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+}
+
+/* Page header class*/
+.BannerBg {
+	background-image: url(../Images/bannerbk.jpg);
+	background-repeat: repeat-x;}
+
+.BannerImg {
+	background-image: url(../Images/FinalBanner.jpg);
+	background-repeat: no-repeat;
+	height: 97px;
+}
+.PageHead {
+
+	background-color: #EFF9FC;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: #BCE6F2;
+	font-size: 16px;
+	font-weight: bold;
+	color: #3A3A56;
+	height: 40px;
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-right: 5px;
+}
+.BannerText {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	font-weight:normal;
+	color: #CC0000;
+	padding-right: 20px;
+	padding-bottom: 5px;
+}
+/* Grid item link class*/
+.FormCtrl {
+	font-family:  Arial, Helvetica, sans-serif;	
+	font-size: 11px;	
+	font-weight: normal;	
+	color: #000000;	
+	margin-left: 15px;
+}
+.FormControls {
+	font-family: Tahoma, arial;
+	font-size: 11px;
+	font-weight: normal;
+	color: #000000;
+	width: 125px;
+	margin-left: 1px;
+}
+.ListCtrl{
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	width: 150px;	
+}
+/* Common style class*/
+.LeftPadding {
+	padding-left: 20px;
+}
+.10pxPadding {
+	padding: 10px;
+}
+/* Blue border and blue background commom class*/
+.BlueBorder {
+	border: 1px solid #4BBADE;
+}
+.BluBg {
+	background-color: #bce6f2;
+}
+/* Page text class*/
+.redhead {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #CC0000;
+}
+.blackTxt {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+}
+.BlackBold {
+	font-size: 12px;
+	font-weight: bold;
+	color: #000000;
+}
+.redtitle {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #CC0000;
+	font-weight: bold;
+	padding-left: 10px;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #CEEAF4;
+}
+.Required {
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: normal;
+	color: #FF0000;
+	text-decoration: none;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+/* Dashboadr standard class*/
+.TabHeadBk {
+	background-image: url(../Images/TabHeadBk.jpg);
+	background-repeat: repeat-x;
+	background-position: left bottom;
+	height: 30px;
+}
+.LoginFormBk {
+
+	background-color: #FFFFFF;
+	background-image: url(../Images/LoginFormBk.jpg);
+	background-repeat: repeat-x;
+	background-position: left top;	
+}
+
+/* Grid Header class*/
+.GridHead {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #3A3A56;
+	padding-top: 5px;
+	padding-bottom: 5px;	
+	background-color: #dff3f9;
+}
+/* Grid item class*/
+.GridItem {
+	
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	height: 22px;
+	border-bottom:solid 1px #c9c6c6;
+	border-left:solid 0px #c9c6c6;
+	border-right:solid 1px #c9c6c6;
+	border-top:solid 1px #c9c6c6;
+	border-collapse:collapse;
+	background-color: #f4fbfd;	
+}
+/* Grid item link class*/
+.GridItemLink {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #CC0000;
+	width: 100px;
+	height: 22px;
+	border-bottom:solid 1px #c9c6c6;
+	border-left:solid 0px #c9c6c6;
+	border-right:solid 1px #c9c6c6;
+	border-top:solid 1px #c9c6c6;
+	border-collapse:collapse;	
+}
+.GridItemLink a:link{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #CC0000;
+	width: 100px;
+	height: 22px;
+}
+.GridItemLink a:active{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #CC0000;
+	width: 100px;
+	height: 22px;
+}
+.GridItemLink a:visited{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #CC0000;
+	width: 100px;
+	height: 22px;
+}
+.GridItemLink a:hover{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #990000;
+	width: 100px;
+	height: 22px;
+}
+/*scrollbar class*/
+.Sbar
+{ 
+scrollbar-face-color: #9EDEEC;
+scrollbar-shadow-color: #28AFCC;
+scrollbar-highlight-color: #ECF8FB;
+scrollbar-3dlight-color: #ffffff;
+scrollbar-darkshadow-color: #B1E7F1;
+scrollbar-track-color: #E4F7FA;
+scrollbar-arrow-color: #1D7E94;
+}
+
+/* Help File Styles*/
+
+.GreyBorder {
+	border-right: 1px solid #ebebeb;
+	border-bottom: 1px solid #ebebeb;
+	border-left: 1px solid #ebebeb;
+}
+.Padding {
+	padding-top: 3px;
+	padding-left: 5px;
+}
+.GreenHd {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #990000;
+	background-image: url(../images/greenHd.jpg);
+	background-repeat: repeat-x;
+	padding-top: 11px;
+	padding-bottom: 11px;
+	font-weight: bold;
+}
+.padding1 {
+	padding-top: 15px;
+	padding-bottom: 25px;
+}
+.greybotbord {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #ebebeb;
+}
+.blacktxt {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+}

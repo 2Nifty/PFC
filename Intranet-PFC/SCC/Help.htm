@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>SCC Help</title>
+<link href="StyleSheet/Styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+                <table cellspacing=0 width=100% cellpadding="2">
+                    <tr>
+                        <td valign="top" colspan="2"><img src="images/FinalBanner.jpg"/></td>
+                    </tr>
+                   <tr>
+                        <td class="PageHead" style="height: 40px" width=75%>
+                            <div class="LeftPadding"><div align="left" class="BannerText">Standard Cost Creator (SCC) Help</div>
+                            </div>
+                        </td>
+                        <td class="PageHead"  style="height: 40px" >
+            <div class="LeftPadding"><div align="right" class="BannerText" >
+             <img src="images/close.gif" onclick="javascript:window.close();" style="cursor:hand"/></div></div></td>
+                    </tr>
+<tr>
+                        <td valign="top" colspan="2">
+           <p> </p>
+                            <p>
+                                This page is used to update standard costs.</p>
+                            <p>
+                                <strong>
+                                It is a 4 step process:<br />
+                                1. Select the Category Group to work on.<br />
+                                2. Set the SCC options.<br />
+                                3. Calculate the new Costs.<br />
+                                4. Update the Standard Costs.</strong></p>
+                            <p>
+                                The left half of the screen will allow you to select a Category Group and set the
+                                SCC Option.<br />
+                                The right half of the screen will show you the calclulated costs and allow you to
+                                make changes and ignore certain lines.<br />
+                                You can also export the data to Excel or print a report. These are explained at
+                                the bottom of this page.</p>
+                            <p>
+                                <strong>
+                                1. Selecting the Category Group and Setting the Velocity Code Filter&nbsp;<br />
+                                </strong>
+                                The Category Groups are the same ones used on the Customer Activity Sheets. Select
+                                a group using the pull down. The first and last categorsy in the group are
+                                shown as well as the first category description. Set the Velocity Code, Package or Plating filters (optional).
+                                Press the OK button in the blue area that says "Get SCC Adders" and the SCC Option
+                                record will be retireved (if one is on file). The Status line at the top will tell
+                                you if the option record was found or if this is a New Option Record.</p>
+                            <p>
+                                <strong>
+                                2. Set the SCC Options<br />
+                                </strong>
+                                These are Discount Reciprocal, Velocity Adder, Premium Category Adder, and Packaging
+                                Adder. <strong>These are percentages.</strong> 
+                                The values in these fields are to be entered in the format ##.##.
+                                E.G. If you want to enter a 3.3% Velocity Adder then enter 3.3 into the Velocity Adder field.
+                                Here are the formulas for how these adders are used:</p>
+                            <p>
+                                <strong>Base Cost</strong> = Alt Price X Discount Reciprocal X ((Preferred
+                                Vendor Anticipated Landed Cost - Direct Unit Cost)/ Direct Unit Cost)[aka the landing
+                                adder percent]
+                                <br />
+                                <strong>Bulk Standard Cost</strong> = Base Cost + Velocity Adder + Premium Category
+                                Adder + Landing Adder&nbsp;<br />
+                                <strong>Package Standard Cost</strong> = Bulk Standard Cost (From bulk part in the
+                                BOM) + Packaging Adder
+                                + Landing Adder&nbsp;<br />
+                                For Package Items where no Bulk Cost exists, we will use the Base Cost for the Package
+                                Item + Velocity Adder + Premium Category Adder &nbsp;</p>
+                            <p>
+                                <strong>Updating the SCC Options:</strong> If you are creating a new SCC Option
+                                record or changing an old one, you must remember to update the record. The record
+                                does not update automatically. This allows you to play with different option values.
+                                Once you have the calculations the way you like them and you want to save the SCC
+                                Option, press the Update button in the blue area that says "Update (Save) SCC Options".
+                                This will save the option values so the are ready the next time you are working
+                                with this Category Group. <strong>Please remember to press the Update button or your
+                                    changes to the SCC options will be lost.</strong>
+                            </p>
+                            <p>
+                                <strong>3. Calculating the Standard Costs<br />
+                                </strong>Press the OK button the in blue area that says "Calculate Costs". A table
+                                will appear on the right side with the new calculated costs. The colums are:<br />
+                                <strong>Item Number:</strong><br />
+                                <strong>Direct:</strong> The Alt Price from the Purchase Prices. This price is shown in the Puchasing UOM.<br />
+                                <strong>Base:</strong> Using the formula from above.<br />
+                                <strong>Bought: </strong>This is the begining date for the Purchase Price.<br />
+                                <strong>Origin:</strong> This indicates whether the price was derived by using the Purchase
+                                Price for the part or
+                                the BOM for the part. This applies to Package Parts only.
+                                All Bulk Parts are from the Purchase Prices. Package Prices that are derived from
+                                the Purchase Price are colored blue.<br />
+                                <strong>Standard Cost:</strong> This is calculated using the formulas above and
+                                can be changed.<br />
+                                <strong>Ignore:</strong> Check this box if you do not want the price to update the
+                                system when the Cost Update is run.</p>
+                            <p>
+                                You can make any changes you want to the Standard Costs and set any number of lines
+                                to be ignored in the Cost Updates. If there is a UOM issue that keeps the Alt Price from
+                                being shown, the costs will be set to zero and you will not be able to update this record.</p>
+                            <p>
+                                <strong>4. Updating the Standard Costs<br />
+                                </strong>Make any changes to the table you want.<br />
+                                Press the Update button the the blue are that says "<span id="UpdCostLabel">Update Costs
+                                    in &lt;Database&gt; on &lt;Server&gt;". Database will be the name of the NewVision
+                                    database you are updating and Server will be the name of the SQL server the Database
+                                    is living on. The Database and Server will be different if you are testing or running
+                                    in the live production evironment. If you are not sure you are in the right place,
+                                    check the data with IT.</span>&nbsp;
+                            </p>
+                            <p>
+                                <b>Please remember to press the run the Cost Update to actually apply the changes to the Standard
+                                    Costs.</b>
+                            </p>
+                            <p>
+                                <strong>
+                                Exporting to Excel</strong><br />
+                                An Excel pack is generated with the same results as the calculated costs. You can copy all or parts of 
+                                this to Excell to work on it. You can also save the page if desired.&nbsp;</p>
+                            <p>
+                                <strong>
+                                Printing a Report<br />
+                                </strong>You can print a copy of the calculated cost by using the Print button.
+                                This will show a page that contains only the cost data. Once the page is displayed,
+                                <strong>use the browser to print the report</strong>.</p>
+                            <p>
+                            </p>
+                        </td>
+            </tr>
+         </table>
+</body>
+</html>
